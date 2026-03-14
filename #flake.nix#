@@ -31,7 +31,7 @@
     home-manager,
     nixpkgs-unstable,
     ...
-  }: let
+  }@inputs: let
     # Supported system (x86_64 architecture only)
     system = "x86_64-linux";
 
@@ -58,7 +58,7 @@
       ];
 
       specialArgs = {
-        inherit self nixpkgs pkgsWithOverlays;
+        inherit self inputs nixpkgs pkgsWithOverlays;
       };
     };
 
