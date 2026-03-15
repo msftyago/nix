@@ -6,17 +6,12 @@
 #
 {
   inputs,
-  #system,
-  #config,
-  #lib,
   pkgs,
   ...
 }: {
   imports = [
     ./hardware-configuration.nix
     inputs.home-manager.nixosModules.home-manager
-
-    
   ];
 
   home-manager = {
@@ -86,45 +81,24 @@
     description = "Kamol Hakimov";
     extraGroups = ["networkmanager" "wheel"];
     packages = with pkgs; [
-      gh
-      gcc
-      dig
       vlc
       anki
       gimp
-      wget
       #lmms
-      bluez
-      exfat
-      xclip
       #kicad
       #krita
       #nheko
-      vscode
       #ardour
-      bottles
       discord
-      gparted
-      openssl
-      ripgrep
       spotify
-      xplanet
       #blender
       #gccgo14
       audacity
-      celestia
       gns3-gui
-      gpredict
-      neofetch
-      obsidian
-      tealdeer
       #guitarix
       #openscad
       librewolf
-      starfetch
-      codeblocks
       obs-studio
-      stellarium
       qbittorrent
       yandex-music
       protonvpn-gui
@@ -133,12 +107,8 @@
       telegram-desktop
       jetbrains-toolbox
       #libsForQt5.kamoso
-      bluez-experimental
-      gnome-disk-utility
       #ciscoPacketTracer7
       #libsForQt5.yakuake
-      libreoffice-qt6-still
-      python312Packages.pip
     ];
   };
 
