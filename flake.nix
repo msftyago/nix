@@ -6,7 +6,7 @@
 
 
   NixOS running on Ryzen 7 5800H, Nvidia GeForce RTX3060 6GB Mobile, 16GB RAM
-  Main laptop -- Acer NITRO5 AN515-45
+  Main machine, laptop -- Acer NITRO5 AN515-45
   */
 
   description = "yago's flake configuration";

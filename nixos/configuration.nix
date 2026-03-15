@@ -6,15 +6,17 @@
 #
 {
   inputs,
-  system,
-  config,
-  lib,
+  #system,
+  #config,
+  #lib,
   pkgs,
   ...
 }: {
   imports = [
     ./hardware-configuration.nix
     inputs.home-manager.nixosModules.home-manager
+
+    
   ];
 
   home-manager = {
@@ -24,6 +26,13 @@
     };
   };
 
+  programs = {
+    nix-ld = {
+      enable = true;
+    };
+  };
+
+  
   # systemd my beloved
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -56,23 +65,7 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
-  # services.pulseaudio.enable = true;
-  # OR
-  # services.pipewire = {
-  #   enable = true;
-  #   pulse.enable = true;
-  # };
-
-  services.pulseaudio.enable = false;
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    jack.enable = true;
-  };
-
+  
   # KDE
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
@@ -81,13 +74,7 @@
   hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
   services.blueman.enable = true;
 
-  programs.steam = {
-    enable = true;
-    remotePlay.openFirewall = true;
-    dedicatedServer.openFirewall = true;
-    localNetworkGameTransfers.openFirewall = true;
-  };
-
+  
   virtualisation.virtualbox.host.enable = true;
   users.extraGroups.vboxusers.members = ["yago"];
   virtualisation.virtualbox.host.enableExtensionPack = true;
@@ -100,22 +87,19 @@
     extraGroups = ["networkmanager" "wheel"];
     packages = with pkgs; [
       gh
-      bat
+      gcc
       dig
       vlc
       anki
       gimp
-      tree
+      wget
       #lmms
       bluez
       exfat
-      kitty
       xclip
       #kicad
       #krita
       #nheko
-      netcat
-      ntfs3g
       vscode
       #ardour
       bottles
@@ -138,11 +122,9 @@
       #openscad
       librewolf
       starfetch
-      wireshark
       codeblocks
       obs-studio
       stellarium
-      virtualbox
       qbittorrent
       yandex-music
       protonvpn-gui
@@ -168,14 +150,22 @@
   environment.systemPackages = with pkgs; [
     lf
     git
+    bat
     vim
+    tree
     btop
     fish
+    curl
     nixd
     wget
     emacs
+    kitty
+    netcat
     cowsay
     lolcat
+    ntfs3g
+    pciutils
+    usbutils
     neofetch
     alejandra
     wireshark
@@ -190,12 +180,6 @@
   #   enableSSHSupport = true;
   # };
 
-  services.emacs = {
-    enable = true;
-    package = inputs.doom-emacs.packages.${system}.doom-emacs.override {
-      doomPrivateDir = ./doom.d; #change it to relative path!
-    };
-  };
 
   # services.openssh.enable = true;
 

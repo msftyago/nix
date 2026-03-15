@@ -1,64 +1,106 @@
-{ config, pkgs, ... }:
-
+#                  .-'''-.
+#                 '   _    \
+#       .       /   /` '.   \  __  __   ___         __.....__
+#     .'|      .   |     \  ' |  |/  `.'   `.   .-''         '.
+#    <  |      |   '      |  '|   .-.  .-.   ' /     .-''"'-.  `.
+#     | |      \    \     / / |  |  |  |  |  |/     /________\   \
+#     | | .'''-.`.   ` ..' /  |  |  |  |  |  ||                  |
+#     | |/.'''. \  '-...-'`   |  |  |  |  |  |\    .-------------'
+#     |  /    | |             |  |  |  |  |  | \    '-.____...---.
+#     | |     | |             |__|  |__|  |__|  `.             .'
+#     | |     | |                                 `''-...... -'
+#     | '.    | '.
+#     '---'   '---'
 {
-  # Home Manager needs a bit of information about you and the paths it should
-  # manage.
+  #config,
+  pkgs,
+  ...
+}: {
   home.username = "yago";
   home.homeDirectory = "/home/yago";
 
-  home.stateVersion = "25.11"; # Please read the comment before changing.
+  home.stateVersion = "25.11";
 
-  # The home.packages option allows you to install Nix packages into your
-  # environment.
   home.packages = with pkgs; [
-    #pkgs.hello
-    lf
     gh
+    lf
     bat
+    dig
     vim
     vlc
-    dig
     zip
-    fish
+    gcc
     anki
-    gimp
     btop
-    tree
+    fish
+    gimp
     nixd
-    unzip
-    exfat
+    tree
+    wget
     cargo
+    exfat
+    unzip
     xclip
-    netcat
-    lolcat
+    #lmms
+    bluez
     cowsay
-    vscode
+    lolcat
+    netcat
     ntfs3g
-    openssl
-    ripgrep
+    vscode
+    #kicad
+    #krita
+    #nheko
+    arduino
     cmatrix
+    discord
     firefox
     gparted
-    discord
-    arduino
+    openssl
+    ripgrep
+    #ardour
+    bottles
+    spotify
+    xplanet
     gns3-gui
     neofetch
     tealdeer
     usbutils
-    librewolf
+    #blender
+    #gccgo14
+    audacity
+    celestia
+    gpredict
+    obsidian
     alejandra
+    librewolf
+    man-pages
     wireshark
+    #guitarix
+    #openscad
+    starfetch
+    codeblocks
     obs-studio
     platformio
-    codeblocks
+    stellarium
+    #pkgs.hello
     nixpkgs-fmt
     qbittorrent
     yandex-music
-    rust-analyzer
     protonvpn-gui
+    rust-analyzer
+    man-pages-posix
+    #pkgs.nerdfonts
     telegram-desktop
+    kdePackages.kate
     jetbrains-toolbox
     gnome-disk-utility
+    #libsForQt5.kamoso
+    bluez-experimental
+    #ciscoPacketTracer7
+    #libsForQt5.yakuake
+    libreoffice-qt6-still
+    python312Packages.pip
     
     # # overrides. You can do that directly here, just don't forget the
     # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
@@ -105,7 +147,7 @@
   #  /etc/profiles/per-user/yago/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-     EDITOR = "emacs";
+    EDITOR = "emacs";
   };
 
   # Let Home Manager install and manage itself.
@@ -117,6 +159,4 @@
     userName = "msftyago";
     userEmail = "muhammadkamol@yahoo.com";
   };
-
-  
 }
