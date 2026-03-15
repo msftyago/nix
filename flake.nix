@@ -54,7 +54,7 @@
       config.allowUnfree = true;
     };
   in {
-    nixosConfiguration.yago = pkgs.lib.nixosSystem {
+    nixosConfigurations.yago = pkgs.lib.nixosSystem {
       inherit system;
       modules = [
         ./nixos/configuration.nix
@@ -67,7 +67,7 @@
     };
 
     # Home manager
-    homeConfiguration.yago = home-manager.lib.homeManagerConfiguration {
+    homeConfigurations.yago = home-manager.lib.homeManagerConfiguration {
       inherit system;
       username = "yago";
       homeDirectory = "/home/yago";
