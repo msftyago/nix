@@ -27,7 +27,6 @@
     };
   };
 
-  
   # systemd my beloved
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -60,7 +59,6 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
-  
   # KDE
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
@@ -69,7 +67,6 @@
   hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
   services.blueman.enable = true;
 
-  
   virtualisation.virtualbox.host.enable = true;
   users.extraGroups.vboxusers.members = ["yago"];
   virtualisation.virtualbox.host.enableExtensionPack = true;
@@ -149,7 +146,6 @@
   #   enable = true;
   #   enableSSHSupport = true;
   # };
-
 
   # services.openssh.enable = true;
 

@@ -34,21 +34,21 @@
     self,
     nixpkgs,
     home-manager,
-    nixpkgs-unstable,
     ...
-  } @ inputs: let
+  } @ inputs:
+  let
     # Supported system (x86_64 architecture only)
     system = "x86_64-linux";
 
     # allow_unfree packages
     pkgs = import nixpkgs {
-      inherit system;
+      inherit system; # system = system;
       config.allowUnfree = true;
     };
 
     # Overlays
     overlays = import ./overlays/default.nix;
-    pkgsWithOverlays = import nixpkgs {
+    pkgsWithOverlays = import pkgs {
       inherit system;
       overlays = [overlays];
       config.allowUnfree = true;
@@ -56,14 +56,13 @@
   in {
     nixosConfiguration.yago = pkgs.lib.nixosSystem {
       inherit system;
-
       modules = [
         ./nixos/configuration.nix
         ./nixos/hardware-configuration.nix
       ];
-
+      
       specialArgs = {
-        inherit self inputs nixpkgs pkgsWithOverlays;
+        inherit self inputs pkgs pkgsWithOverlays;
       };
     };
 
