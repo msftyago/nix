@@ -46,7 +46,7 @@
     lolcat
     netcat
     ntfs3g
-    vscode
+    #vscode
     #kicad
     #krita
     #nheko

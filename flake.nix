@@ -54,7 +54,7 @@
       config.allowUnfree = true;
     };
   in {
-    nixosConfigurations.yago = pkgs.lib.nixosSystem {
+    nixosConfigurations.yago = nixpkgs.lib.nixosSystem {
       inherit system;
       modules = [
         ./nixos/configuration.nix
@@ -62,7 +62,7 @@
       ];
       
       specialArgs = {
-        inherit self inputs pkgs pkgsWithOverlays;
+        inherit self inputs pkgsWithOverlays;
       };
     };
 
