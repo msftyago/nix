@@ -19,7 +19,7 @@
   home.homeDirectory = "/home/yago";
 
   home.stateVersion = "25.11";
-
+  nixpkgs.config.allowUnfree = true;
   home.packages = with pkgs; [
     gh
     lf
@@ -41,7 +41,7 @@
     unzip
     xclip
     #lmms
-    bluez
+    #bluez
     cowsay
     lolcat
     netcat
