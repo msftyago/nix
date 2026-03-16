@@ -153,9 +153,23 @@
   programs.home-manager.enable = true;
 
   # Git
+  programs.gh.enable = true;
+  
   programs.git = {
     enable = true;
-    userName = "msftyago";
-    userEmail = "muhammadkamol@yahoo.com";
+    alias = {
+      com = "commit";
+      s = "status";
+    };
+    
+    settings = {
+      user = {
+        name  = "Kamol Hakimov";
+        email = "muhammadkamol@yahoo.com";
+      };
+      init.defaultBranch = "main";
+    };
   };
+
+  
 }
