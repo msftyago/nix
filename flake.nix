@@ -19,6 +19,9 @@
     # Nixpkgs stable (Xantusia 25.11)
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
 
+    # GNU Emacs my beloved
+    doom-emacs.url = "github:nix-community/nix-doom-emacs";
+    
     # Nixpkgs unstable for rolling release
     nixpkgs-unstable.url = "github:nixos/nixpkgs?ref=nixos-unstable";
 

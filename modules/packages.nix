@@ -1,4 +1,6 @@
 {pkgs, ...}: {
+
+  
   environment.systemPackages = with pkgs; [
     lf
     git
@@ -35,6 +37,7 @@
       vlc
       anki
       gimp
+      emacs
       #lmms
       #kicad
       #krita

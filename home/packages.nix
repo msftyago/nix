@@ -23,6 +23,7 @@
     unzip
     xclip
     #lmms
+    gnutls
     #bluez
     cowsay
     lolcat
