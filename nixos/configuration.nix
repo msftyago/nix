@@ -6,17 +6,17 @@
 #
 {
   inputs,
-  pkgs,
   ...
 }: {
   imports = [
     ./hardware-configuration.nix
-    
+
     inputs.home-manager.nixosModules.home-manager
 
+    ../modules/packages.nix # environment & user packages
+    
     ./parts/game.nix
     ./parts/audio.nix
-    
   ];
 
   home-manager = {
