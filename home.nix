@@ -12,110 +12,17 @@
 #     | '.    | '.
 #     '---'   '---'
 {
-  pkgs,
-  ...
-}: {
   home.username = "yago";
   home.homeDirectory = "/home/yago";
 
   home.enableNixpkgsReleaseCheck = false; #handles the version mismatch warning
-  
+
   home.stateVersion = "25.11";
   nixpkgs.config.allowUnfree = true;
-  home.packages = with pkgs; [
-    gh
-    lf
-    bat
-    dig
-    vim
-    vlc
-    zip
-    gcc
-    anki
-    btop
-    fish
-    gimp
-    nixd
-    tree
-    wget
-    cargo
-    exfat
-    unzip
-    xclip
-    #lmms
-    #bluez
-    cowsay
-    lolcat
-    netcat
-    ntfs3g
-    #vscode
-    #kicad
-    #krita
-    #nheko
-    arduino
-    cmatrix
-    discord
-    firefox
-    gparted
-    openssl
-    ripgrep
-    #ardour
-    bottles
-    spotify
-    xplanet
-    gns3-gui
-    neofetch
-    tealdeer
-    usbutils
-    #blender
-    #gccgo14
-    audacity
-    celestia
-    gpredict
-    obsidian
-    alejandra
-    librewolf
-    man-pages
-    wireshark
-    #guitarix
-    #openscad
-    starfetch
-    codeblocks
-    obs-studio
-    platformio
-    stellarium
-    #pkgs.hello
-    nixpkgs-fmt
-    qbittorrent
-    yandex-music
-    protonvpn-gui
-    rust-analyzer
-    man-pages-posix
-    #pkgs.nerdfonts
-    telegram-desktop
-    kdePackages.kate
-    jetbrains-toolbox
-    gnome-disk-utility
-    #libsForQt5.kamoso
-    bluez-experimental
-    #ciscoPacketTracer7
-    #libsForQt5.yakuake
-    libreoffice-qt6-still
-    python312Packages.pip
-    
-    # # overrides. You can do that directly here, just don't forget the
-    # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
-    # # fonts?
-    #(pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
 
-    # # You can also create simple shell scripts directly inside your
-    # # configuration. For example, this adds a command 'my-hello' to your
-    # # environment:
-    # (pkgs.writeShellScriptBin "my-hello" ''
-    #   echo "Hello, ${config.home.username}!"
-    # '')
+  imports = [
+    ./home/packages.nix #home.packages
   ];
-
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
   home.file = {
@@ -156,11 +63,11 @@
 
   # Git
   programs.gh.enable = true;
-  
+
   programs.git = {
     settings = {
       user = {
-        name  = "Kamol Hakimov";
+        name = "Kamol Hakimov";
         email = "muhammadkamol@yahoo.com";
       };
       init.defaultBranch = "main";

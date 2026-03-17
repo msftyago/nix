@@ -35,8 +35,7 @@
     nixpkgs,
     home-manager,
     ...
-  } @ inputs:
-  let
+  } @ inputs: let
     # Supported system (x86_64 architecture only)
     system = "x86_64-linux";
 
@@ -60,7 +59,7 @@
         ./nixos/configuration.nix
         ./nixos/hardware-configuration.nix
       ];
-      
+
       specialArgs = {
         inherit self inputs pkgsWithOverlays;
       };
