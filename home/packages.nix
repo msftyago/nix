@@ -78,11 +78,14 @@
     gnome-disk-utility
     #libsForQt5.kamoso
     bluez-experimental
+    emacsPackages.doom
     #ciscoPacketTracer7
     #libsForQt5.yakuake
+    emacsPackages.flymd
     libreoffice-qt6-still
     python312Packages.pip
-
+    emacsPackages.markdown-preview-mode
+    
     # # overrides. You can do that directly here, just don't forget the
     # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
     # # fonts?

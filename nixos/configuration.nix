@@ -17,6 +17,7 @@
     
     ./parts/game.nix
     ./parts/audio.nix
+    ./parts/emacs.nix
   ];
 
   home-manager = {
