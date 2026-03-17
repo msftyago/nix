@@ -18,6 +18,8 @@
   home.username = "yago";
   home.homeDirectory = "/home/yago";
 
+  home.enableNixpkgsReleaseCheck = false; #handles the version mismatch warning
+  
   home.stateVersion = "25.11";
   nixpkgs.config.allowUnfree = true;
   home.packages = with pkgs; [
@@ -156,12 +158,6 @@
   programs.gh.enable = true;
   
   programs.git = {
-    enable = true;
-    alias = {
-      com = "commit";
-      s = "status";
-    };
-    
     settings = {
       user = {
         name  = "Kamol Hakimov";
@@ -170,6 +166,4 @@
       init.defaultBranch = "main";
     };
   };
-
-  
 }

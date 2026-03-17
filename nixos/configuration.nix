@@ -22,6 +22,7 @@
 
   home-manager = {
     extraSpecialArgs = {inherit inputs;};
+    backupFileExtension = "backup";
     users = {
       yago = import ../home.nix;
     };
@@ -121,7 +122,6 @@
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
-    gh
     lf
     git
     bat
