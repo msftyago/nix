@@ -1,6 +1,4 @@
 > [!CAUTION]
-> This hosts system and home configurations are public for your own learning and
-> research. They are not meant to be used with any hardware other than mine.
-> Trying to build and deploy them to other systems without appropriate changes
-> can render your machines unbootable and damage data.
-
+> Repository is under active development, and the structure is incomplete.
+> Trying to build and deploy on other machines without appropriate changes
+> can result in data loss, or making your device unbootable. Rebuilt at will.
