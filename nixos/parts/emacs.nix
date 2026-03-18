@@ -8,8 +8,11 @@
       epkgs.grip-mode
       epkgs.doom
       epkgs.markdown-preview-mode
+      epkgs.visual-fill-column
     ];
   };
+
+  
   /*
   services.emacs = {
     enable = true;
