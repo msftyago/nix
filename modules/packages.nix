@@ -10,12 +10,16 @@
     curl
     nixd
     wget
+    zeek
     emacs
     kitty
+    tshark
     netcat
     cowsay
     lolcat
     ntfs3g
+    tcpdump
+    suricata
     pciutils
     usbutils
     neofetch
