@@ -6,9 +6,13 @@
   # Packet tracer log in can be subverted if there is no internet connection
   # so use firejail to isolate packet tracer into its own network namespace
   # when running
+  nixpkgs.config.permittedInsecurePackages = [
+    "ciscoPacketTracer8-8.2.2"
+  ];
+  
   programs.firejail = {
     enable = true;
-    wrappedBinaries = {
+    wrappedBinaries = {/*
       packettracer8 = {
         executable = lib.getExe pkgs.ciscoPacketTracer8;
 
@@ -26,7 +30,7 @@
           # should unset the theme. Uncomment if you have this issue.
           # ''--env=QT_STYLE_OVERRIDE=""''
         ];
-      };
+      };*/
     };
   };
 }

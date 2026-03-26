@@ -20,6 +20,7 @@
     ntfs3g
     tcpdump
     suricata
+    firejail
     pciutils
     usbutils
     neofetch

@@ -14,6 +14,7 @@
 
     ./parts/game.nix
     ./parts/audio.nix
+    ./parts/pkt.nix
   ];
 
   home-manager = {
@@ -51,8 +52,8 @@
   # X11
   services.xserver.enable = true;
   services.xserver = {
-    layout = "us";
-    xkbVariant = "";
+    xkb.layout = "us";
+    xkb.variant = "";
   };
 
   # Configure keymap in X11
