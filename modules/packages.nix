@@ -1,6 +1,4 @@
 {pkgs, ...}: {
-
-  
   environment.systemPackages = with pkgs; [
     lf
     git
@@ -31,8 +29,12 @@
   users.users.yago = {
     isNormalUser = true;
     shell = pkgs.fish;
-    description = "Kamol Hakimov";
-    extraGroups = ["networkmanager" "wheel"];
+    description = "Kamol Khakimov";
+    extraGroups = [
+      "networkmanager"
+      "wireshark"
+      "wheel"
+    ];
     packages = with pkgs; [
       vlc
       anki
@@ -61,6 +63,7 @@
       telegram-desktop
       jetbrains-toolbox
       #libsForQt5.kamoso
+      #ciscoPacketTracer8
       #ciscoPacketTracer7
       #libsForQt5.yakuake
     ];

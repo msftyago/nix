@@ -4,17 +4,14 @@
 #     /    // /_>  </ /_/ /\ \/___/ /__/ /_/ /    / _/_/ // (_ /
 #    /_/|_/___/_/|_|\____/___/    \___/\____/_/|_/_/ /___/\___/
 #
-{
-  inputs,
-  ...
-}: {
+{inputs, ...}: {
   imports = [
     ./hardware-configuration.nix
 
     inputs.home-manager.nixosModules.home-manager
 
     ../modules/packages.nix # environment & user packages
-    
+
     ./parts/game.nix
     ./parts/audio.nix
   ];
