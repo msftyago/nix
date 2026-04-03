@@ -21,7 +21,10 @@
 
     # GNU Emacs my beloved
     doom-emacs.url = "github:nix-community/nix-doom-emacs";
-    
+
+    zen-browser.url = "github:youwen5/zen-browser-flake";
+    zen-browser.inputs.nixpkgs.follows = "nixpkgs";
+        
     # Nixpkgs unstable for rolling release
     nixpkgs-unstable.url = "github:nixos/nixpkgs?ref=nixos-unstable";
 
