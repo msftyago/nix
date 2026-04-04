@@ -23,6 +23,7 @@
     unzip
     xclip
     #lmms
+    clippy
     gnutls
     #bluez
     cowsay
@@ -33,6 +34,7 @@
     #kicad
     #krita
     #nheko
+    rustfmt
     arduino
     cmatrix
     discord

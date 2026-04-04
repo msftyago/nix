@@ -5,13 +5,15 @@
       # Firefox incompatible
       #epkgs.flymd
       epkgs.grip-mode
-      epkgs.grip-mode
-      epkgs.doom
-      epkgs.markdown-preview-mode
-      epkgs.visual-fill-column
+      epkgs.all-the-icons
+      epkgs.corfu
+      epkgs.treemacs
+      epkgs.treemacs-nerd-icons
+      epkgs.elisp-autofmt
+      epkgs.markdown-mode
+      epkgs.transwin
     ];
   };
-
   
   /*
   services.emacs = {
