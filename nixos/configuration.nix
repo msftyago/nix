@@ -6,14 +6,12 @@
 #
 {inputs, ...}: {
   imports = [
-    ./hardware-configuration.nix
-
     inputs.home-manager.nixosModules.home-manager
-
-    ../modules/packages.nix # environment & user packages
-
-    ./parts/game.nix
+    ./hardware-configuration.nix
+    ../modules/packages.nix         #INFO: environment & user packages
+   #../modules/lib.nix              #TODO: fix modules
     ./parts/audio.nix
+    ./parts/game.nix
     ./parts/pkt.nix
   ];
 
@@ -24,13 +22,17 @@
       yago = import ../home.nix;
     };
   };
-
+  
   programs = {
     nix-ld = {
       enable = true;
     };
   };
 
+  nixpkgs.config.permittedInsecurePackages = [
+         "ciscoPacketTracer7-7.3.1"
+  ];
+  
   # systemd my beloved
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;

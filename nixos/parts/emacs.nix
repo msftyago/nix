@@ -4,14 +4,16 @@
     extraPackages = epkgs: [
       # Firefox incompatible
       #epkgs.flymd
-      epkgs.grip-mode
-      epkgs.all-the-icons
       epkgs.corfu
+      epkgs.direnv
+      epkgs.neotree
       epkgs.treemacs
-      epkgs.treemacs-nerd-icons
-      epkgs.elisp-autofmt
-      epkgs.markdown-mode
       epkgs.transwin
+      epkgs.grip-mode
+      epkgs.elisp-autofmt
+      epkgs.all-the-icons
+      epkgs.markdown-mode
+      epkgs.treemacs-nerd-icons
     ];
   };
   

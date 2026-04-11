@@ -23,7 +23,9 @@
     unzip
     xclip
     #lmms
+    putty
     clippy
+    direnv
     gnutls
     #bluez
     cowsay
@@ -36,6 +38,7 @@
     #nheko
     rustfmt
     arduino
+    openocd
     cmatrix
     discord
     firefox
@@ -56,6 +59,7 @@
     celestia
     gpredict
     obsidian
+    inetutils
     alejandra
     librewolf
     man-pages

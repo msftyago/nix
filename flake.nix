@@ -44,7 +44,7 @@
   } @ inputs: let
     # Supported system (x86_64 architecture only)
     system = "x86_64-linux";
-
+      
     # allow_unfree packages
     pkgs = import nixpkgs {
       inherit system; # system = system;

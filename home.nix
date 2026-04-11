@@ -56,13 +56,14 @@
   #
   #  /etc/profiles/per-user/yago/etc/profile.d/hm-session-vars.sh
   #
+
   home.sessionVariables = {
     EDITOR = "emacs";
   };
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-
+  
   # Git
   programs.gh.enable = true;
 
