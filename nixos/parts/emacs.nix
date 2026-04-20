@@ -13,7 +13,10 @@
       epkgs.elisp-autofmt
       epkgs.all-the-icons
       epkgs.markdown-mode
+      epkgs.wakatime-mode
+      epkgs.pandoc
       epkgs.treemacs-nerd-icons
+      epkgs.pdf-tools
     ];
   };
   

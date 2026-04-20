@@ -46,9 +46,9 @@
       gimp
       emacs
       #lmms
+      nheko
       #kicad
       #krita
-      #nheko
       #ardour
       discord
       spotify
@@ -69,7 +69,7 @@
       jetbrains-toolbox
       #libsForQt5.kamoso
       #ciscoPacketTracer8
-      ciscoPacketTracer7
+      #ciscoPacketTracer7
       #libsForQt5.yakuake
     ];
   };

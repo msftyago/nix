@@ -7,6 +7,7 @@
 auto-save-list
 tramp
 .\#*
+./nixos/parts/.secrets
 
 # Org-mode
 .org-id-locations

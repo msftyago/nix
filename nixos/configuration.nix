@@ -30,7 +30,8 @@
   };
 
   nixpkgs.config.permittedInsecurePackages = [
-         "ciscoPacketTracer7-7.3.1"
+    "ciscoPacketTracer8-8.2.2"
+    "olm-3.2.16"
   ];
   
   # systemd my beloved

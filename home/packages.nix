@@ -25,6 +25,7 @@
     #lmms
     putty
     clippy
+    pandoc
     direnv
     gnutls
     #bluez
@@ -77,6 +78,7 @@
     yandex-music
     protonvpn-gui
     rust-analyzer
+    liberation_ttf
     man-pages-posix
     #pkgs.nerdfonts
     telegram-desktop
