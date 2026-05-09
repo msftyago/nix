@@ -9,10 +9,15 @@
 ;; https://github.com/msftyago/nix/nixos/parts/.emacs
 
 ;; Auto enable
-;;(add-hook 'c++-mode 'eglot corfu)
-;;(add-hook 'c++-mode 'eglot eglot-ensure)
-;;(add-hook 'python-mode 'eglot corfu)
-;;(add-hook 'python-mode 'eglot eglot-ensure)
+;;(add-hook 'c++-mode 'eglot company-mode)
+
+;; tty
+(add-hook 'tty-setup-hook
+          (lambda ()
+            (set-face-background 'default "unspecified-bg")
+	    (set-face-background 'line-number "unspecified-bg")
+            (set-face-background 'line-number-current-line "unspecified-bg")
+            (set-face-background 'region "unspecified-bg")))
 
 ;; Custom preferences
 (custom-set-variables
@@ -20,6 +25,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(battery-mode-line-format "(%b%p%%)")
  '(blink-cursor-blinks 1)
  '(blink-cursor-delay 0)
  '(blink-cursor-interval 0.2)
@@ -31,8 +37,21 @@
      "6dcf1ca4c7432773084b9d52649ee5eb2c663131c4c06859f648dea98d9acb3e"
      "7e98dc1aa7f5db0557691da690c38d55e83ddd33c6d268205d66e430d57fb982"
      default))
+ '(display-battery-mode t)
  '(display-line-numbers t)
+ '(load-file "./.secrets")
  '(menu-bar-mode nil)
+ '(mode-line-format
+   '("%e" mode-line-front-space
+     (:propertize
+      ("" mode-line-mule-info mode-line-client mode-line-modified
+       mode-line-remote mode-line-window-dedicated)
+      display (min-width (6.0)))
+     mode-line-frame-identification mode-line-buffer-identification
+     "   " mode-line-position
+     (project-mode-line project-mode-line-format) (vc-mode vc-mode)
+     "  " mode-line-modes mode-line-misc-info))
+ '(mode-line-right-align-edge 'right-fringe)
  '(package-selected-packages
    '(aggressive-indent company corfu ef-themes markdown-mode
 		       math-symbol-lists modus-themes nix-mode org
@@ -40,7 +59,6 @@
 		       rust-mode ztree))
  '(scroll-bar-mode nil)
  '(tool-bar-mode nil)
- '(load-file "./.secrets")
  '(wakatime-cli-path "~/.wakatime/wakatime-cli"))
 (global-wakatime-mode)
 
@@ -64,16 +82,22 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(default ((t (:inherit nil :extend nil :stipple nil :background "#080808" :foreground "#ffffff" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 102 :width normal :family "DejaVu Sans Mono"))))
+ '(aw-mode-line-face ((t (:inherit modus-themes-bold :underline nil))))
  '(compilation-line-number ((t nil)))
  '(corfu-bar ((t (:background "white"))))
  '(corfu-border ((t (:background "dark red"))))
  '(corfu-default ((t (:inherit modus-themes-fixed-pitch :background "black"))))
  '(cursor ((t (:background "red"))))
  '(fringe ((t (:background "#080808" :foreground "#ffffff"))))
+ '(lazy-highlight ((t (:background "DarkOrange1" :foreground "deep pink"))))
  '(line-number ((t (:inherit default :background "#080808" :foreground "gray22"))))
  '(line-number-current-line ((t (:inherit (bold default) :background "#080808" :foreground "red"))))
  '(mode-line ((t (:inherit modus-themes-ui-variable-pitch :background "black" :foreground "#ffffff" :box (:line-width (1 . 1) :color "#959595")))))
- '(mode-line-active ((t (:inherit modus-themes-ui-variable-pitch :background "dark red" :foreground "white" :box (:line-width (1 . 1) :color "dark red"))))))
+ '(mode-line-active ((t (:inherit modus-themes-ui-variable-pitch :background "dark red" :foreground "white" :box (:line-width (1 . 1) :color "dark red")))))
+ '(mode-line-highlight ((t (:background "#45605e" :foreground "#ffffff" :box (:line-width (1 . 1) :color "#ffffff")))))
+ '(tty-menu-disabled-face ((t (:background "#303030" :foreground "#989898"))))
+ '(tty-menu-enabled-face ((t (:inherit bold :background "#303030" :foreground "#ffffff"))))
+ '(tty-menu-selected-face ((t (:background "#1640b0" :foreground "#ffffff")))))
 (require 'use-package)
 (setq use-package-always-ensure t)
 

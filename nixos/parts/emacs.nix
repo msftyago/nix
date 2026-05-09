@@ -6,17 +6,19 @@
       #epkgs.flymd
       epkgs.corfu
       epkgs.direnv
+      epkgs.pandoc
       epkgs.neotree
       epkgs.treemacs
       epkgs.transwin
       epkgs.grip-mode
+      epkgs.pdf-tools
+      epkgs.auto-org-md
       epkgs.elisp-autofmt
       epkgs.all-the-icons
       epkgs.markdown-mode
       epkgs.wakatime-mode
-      epkgs.pandoc
+      epkgs.rainbow-delimiters
       epkgs.treemacs-nerd-icons
-      epkgs.pdf-tools
     ];
   };
   

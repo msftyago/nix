@@ -26,6 +26,7 @@
     neofetch
     alejandra
     wireshark
+    zed-editor
     nixpkgs-fmt
     rust-analyzer
     emacsPackages.doom

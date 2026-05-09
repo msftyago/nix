@@ -4,16 +4,25 @@
 #     /    // /_>  </ /_/ /\ \/___/ /__/ /_/ /    / _/_/ // (_ /
 #    /_/|_/___/_/|_|\____/___/    \___/\____/_/|_/_/ /___/\___/
 #
-{inputs, ...}: {
+{
+  inputs,
+  lib,
+  pkgs,
+  ...
+}: {
   imports = [
     inputs.home-manager.nixosModules.home-manager
     ./hardware-configuration.nix
-    ../modules/packages.nix         #INFO: environment & user packages
-   #../modules/lib.nix              #TODO: fix modules
+    ../modules/packages.nix #INFO: environment & user packages
     ./parts/audio.nix
     ./parts/game.nix
     ./parts/pkt.nix
   ];
+
+  # CVE-2026-31431
+  boot.kernelPackages = lib.mkIf (lib.versionOlder pkgs.linux.version "6.18.22") (
+    lib.mkDefault pkgs.linuxPackages_6_18
+  );
 
   home-manager = {
     extraSpecialArgs = {inherit inputs;};
@@ -22,7 +31,7 @@
       yago = import ../home.nix;
     };
   };
-  
+
   programs = {
     nix-ld = {
       enable = true;
@@ -33,7 +42,7 @@
     "ciscoPacketTracer8-8.2.2"
     "olm-3.2.16"
   ];
-  
+
   # systemd my beloved
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
