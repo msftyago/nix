@@ -1,33 +1,36 @@
-{
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   fonts = {
+    enableDefaulPackages = true;
     packages = with pkgs; [
       roboto
-      work-sans
-      comic-neue
-      source-sans
-      dejavu_fonts
-      noto-fonts
-      noto-fonts-cjk-sans
+      liberation_ttf
+      #work-sans
+      #comic-neue
+      #source-sans
+      #dejavu_fonts
+
+      # Noto
+      #noto-fonts
+      #noto-fonts-cjk-sans
       noto-fonts-color-emoji
+
+      iosevka
+      fira-sans
       fira-code
       jetbrains-mono
-      openmoji-color
-      twemoji-color-font
-      corefonts
-      vista-fonts
-      material-symbols
+      googlesans-code
+      #openmoji-color
+      #twemoji-color-font
+      #corefonts
+      #vista-fonts
+      #material-symbols
     ];
-
-    enableDefaultPackages = false;
 
     fontconfig = {
       defaultFonts = {
-        monospace = ["FiraCode Nerd Font Mono" "Noto Color Emoji"];
-        sansSerif = ["SFProDisplay Nerd Font" "Noto Color Emoji"];
-        serif = ["SFProDisplay Nerd Font" "Noto Color Emoji"];
+        monospace = ["Liberation Serif" "Noto Color Emoji"];
+        sansSerif = ["Liberation Serif" "Noto Color Emoji"];
+        serif = ["Liberation Serif" "Noto Color Emoji"];
         emoji = ["Noto Color Emoji"];
       };
     };

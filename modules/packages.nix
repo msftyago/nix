@@ -1,9 +1,13 @@
 {pkgs, ...}: {
   environment.systemPackages = with pkgs; [
+    nh
     lf
     git
     bat
     vim
+    meow
+    spek
+    htop
     tree
     btop
     fish
@@ -11,25 +15,44 @@
     nixd
     wget
     zeek
+    gimp
     emacs
     kitty
+    e-imzo
     tshark
     netcat
     cowsay
     lolcat
     ntfs3g
+    fractal
+    keymapp
     tcpdump
+    element
+    pkgconf
+    hyfetch
+    obsidian
+    keycloak
+    pgadmin4
+    ibm-plex
     suricata
+    notonoto
     firejail
     pciutils
     usbutils
-    neofetch
+    sqlx-cli
     alejandra
     wireshark
+    postgresql
     zed-editor
+    font-alias
+    noto-fonts
     nixpkgs-fmt
+    element-web
     rust-analyzer
+    e-imzo-manager
+    element-desktop
     emacsPackages.doom
+    noto-fonts-color-emoji
   ];
 
   users.users.yago = {
@@ -44,7 +67,7 @@
     packages = with pkgs; [
       vlc
       anki
-      gimp
+      #gimp
       emacs
       #lmms
       nheko
@@ -60,10 +83,11 @@
       #guitarix
       #openscad
       librewolf
+      proton-vpn
       obs-studio
+      thunderbird
       qbittorrent
       yandex-music
-      protonvpn-gui
       #pkgs.nerdfonts
       kdePackages.kate
       telegram-desktop

@@ -8,9 +8,6 @@
 ;;
 ;; https://github.com/msftyago/nix/nixos/parts/.emacs
 
-;; Auto enable
-;;(add-hook 'c++-mode 'eglot company-mode)
-
 ;; tty
 (add-hook 'tty-setup-hook
           (lambda ()
@@ -39,7 +36,7 @@
      default))
  '(display-battery-mode t)
  '(display-line-numbers t)
- '(load-file "./.secrets")
+ '(fancy-splash-image nil)
  '(menu-bar-mode nil)
  '(mode-line-format
    '("%e" mode-line-front-space
@@ -52,15 +49,12 @@
      (project-mode-line project-mode-line-format) (vc-mode vc-mode)
      "  " mode-line-modes mode-line-misc-info))
  '(mode-line-right-align-edge 'right-fringe)
- '(package-selected-packages
-   '(aggressive-indent company corfu ef-themes markdown-mode
-		       math-symbol-lists modus-themes nix-mode org
-		       org-journal org-modern org-superstar pacmacs
-		       rust-mode ztree))
+ '(package-selected-packages nil)
+ '(package-vc-selected-packages
+   '((pgmacs :vc-backend Git :url "https://github.com/emarsden/pgmacs")
+     (pg :vc-backend Git :url "https://github.com/emarsden/pg-el")))
  '(scroll-bar-mode nil)
- '(tool-bar-mode nil)
- '(wakatime-cli-path "~/.wakatime/wakatime-cli"))
-(global-wakatime-mode)
+ '(tool-bar-mode nil))
 
 (use-package emacs
   :init
@@ -81,7 +75,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :extend nil :stipple nil :background "#080808" :foreground "#ffffff" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 102 :width normal :family "DejaVu Sans Mono"))))
+ '(default ((t (:inherit nil :extend nil :stipple nil :background "#000000" :foreground "#ffffff" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight regular :height 105 :width normal :foundry "JB" :family "Fira Code"))))
  '(aw-mode-line-face ((t (:inherit modus-themes-bold :underline nil))))
  '(compilation-line-number ((t nil)))
  '(corfu-bar ((t (:background "white"))))
@@ -111,6 +105,12 @@
 ;;      corfu-auto-trigger "."
 ;;      corfu-quit-no-match 'separator) ;; or use t
 
+;; Scopeline
+;; (use-package scopeline
+;;  :ensure t
+;;  :delight
+;;  :hook (rust-ts-mode . scopeline-mode))
+
 ;; Dabbrev
 (use-package dabbrev
   ;; Swap M-/ and C-M-/
@@ -122,6 +122,13 @@
   (add-to-list 'dabbrev-ignored-buffer-modes 'doc-view-mode)
   (add-to-list 'dabbrev-ignored-buffer-modes 'pdf-view-mode)
   (add-to-list 'dabbrev-ignored-buffer-modes 'tags-table-mode))
+
+
+;; Racer {via company}
+(require 'company-racer)
+
+(with-eval-after-load 'company
+     (add-to-list 'company-backends 'company-racer))
 
 ;; NeoTree 
 ;; (add-to-list 'load-path "/path/to/directory")

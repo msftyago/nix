@@ -17,13 +17,16 @@
 
   inputs = {
     # Nixpkgs stable (Xantusia 25.11)
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
+    # nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
 
+    # Nixpkgs beta
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
+    
     # GNU Emacs my beloved
-    doom-emacs.url = "github:nix-community/nix-doom-emacs";
+    # doom-emacs.url = "github:nix-community/nix-doom-emacs";
 
-    zen-browser.url = "github:youwen5/zen-browser-flake";
-    zen-browser.inputs.nixpkgs.follows = "nixpkgs";
+    # zen-browser.url = "github:youwen5/zen-browser-flake";
+    # zen-browser.inputs.nixpkgs.follows = "nixpkgs";
         
     # Nixpkgs unstable for rolling release
     nixpkgs-unstable.url = "github:nixos/nixpkgs?ref=nixos-unstable";
