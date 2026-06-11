@@ -1,4 +1,4 @@
-{  epkgs }
+{
   programs.emacs = {
     enable = true;
     extraPackages = epkgs: with epkgs; [
@@ -21,15 +21,22 @@
       pdf-tools
       wat-ts-mode
       auto-org-md
+      mermaid-mode
       company-racer
       elisp-autofmt
       all-the-icons
       markdown-mode
       #wakatime-mode
-      sideline-eglot
+      #sideline-eglot
       #sideline-flymake
-      sideline-flycheck
+      #sideline-flycheck
       rainbow-delimiters
+
+      # Lisp
+      elpaca
+      elisp-def
+      elisp-refs
+      elisp-format
 
       # Tree-sitter
       tree-sitter

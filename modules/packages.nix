@@ -30,6 +30,7 @@
     element
     pkgconf
     hyfetch
+    lazygit
     obsidian
     keycloak
     pgadmin4

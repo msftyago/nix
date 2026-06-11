@@ -28,10 +28,10 @@
 
     fontconfig = {
       defaultFonts = {
-        monospace = ["Liberation Serif" "Noto Color Emoji"];
-        sansSerif = ["Liberation Serif" "Noto Color Emoji"];
-        serif = ["Liberation Serif" "Noto Color Emoji"];
-        emoji = ["Noto Color Emoji"];
+        monospace = ["Liberation Sans"];
+        sansSerif = ["Liberation Sans"];
+        serif = ["Liberation Sans"];
+        emoji = ["Liberation Sans"];
       };
     };
   };

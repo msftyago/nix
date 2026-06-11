@@ -51,12 +51,11 @@
     spotify
     xplanet
     gns3-gui
-    neofetch
     tealdeer
     usbutils
     #blender
     #gccgo14
-    audacity
+   audacity
     celestia
     gpredict
     obsidian
