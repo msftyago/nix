@@ -128,7 +128,7 @@
       (toggle-truncate-lines)
       ;;(insert-image-file "~/Pictures/Fav pics/C229_825.png")
       (delete-other-windows)
-      (message "burnt sage in my lungs where i find you\nhiding in a drawer like candy")
+      (message "There is only time. A circular pattern, a hex I abide ")
       (buffer-modified-p)
       (read-only-mode))))
 
