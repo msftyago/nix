@@ -6,6 +6,7 @@
       kkp
       meow
       anzu
+      magit
       corfu
       #racer
       direnv

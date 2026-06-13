@@ -75,7 +75,6 @@
     nixpkgs-fmt
     qbittorrent
     yandex-music
-    protonvpn-gui
     rust-analyzer
     liberation_ttf
     man-pages-posix
