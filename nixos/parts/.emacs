@@ -1,7 +1,8 @@
+(setq inhibit-startup-screen t)
 ;;; -*- lexical-binding: t -*-
 
-;;  ___ __  __   _   ___ ___                __ _     
-;; | __|  \/  | /_\ / __/ __|  __ ___ _ _  / _(_)__ _ 
+;;  ___ __  __   _   ___ ___                __ _
+;; | __|  \/  | /_\ / __/ __|  __ ___ _ _  / _(_)__ _
 ;; | _|| |\/| |/ _ \ (__\__ \ / _/ _ \ ' \|  _| / _` |
 ;; |___|_|  |_/_/ \_\___|___/ \__\___/_||_|_| |_\__, |
 ;;                                              |___/
@@ -9,12 +10,11 @@
 ;; https://github.com/msftyago/nix/nixos/parts/.emacs
 
 ;; tty
-(add-hook 'tty-setup-hook
-          (lambda ()
-            (set-face-background 'default "unspecified-bg")
-	    (set-face-background 'line-number "unspecified-bg")
-            (set-face-background 'line-number-current-line "unspecified-bg")
-            (set-face-background 'region "unspecified-bg")))
+(add-hook 'tty-setup-hook (lambda ()
+(set-face-background 'default "unspecified-bg")
+(set-face-background 'line-number "unspecified-bg")
+(set-face-background 'line-number-current-line "unspecified-bg")
+(set-face-background 'region "unspecified-bg")))
 
 ;; Custom preferences
 (custom-set-variables
@@ -57,13 +57,12 @@
  '(tool-bar-mode nil))
 
 (use-package emacs
-  :init
-  (global-set-key (kbd "C-=") 'text-scale-increase)
-  (global-set-key (kbd "C--") 'text-scale-decrease)
-  (global-set-key [f8] 'neotree-toggle)
-  (global-set-key [f7] 'company-clang))
+:init (global-set-key (kbd "C-=") 'text-scale-increase)
+(global-set-key (kbd "C--") 'text-scale-decrease)
+(global-set-key [f8] 'neotree-toggle)
+(global-set-key [f7] 'company-clang))
 
-;; Make frames transparent (use pkgs.emacs-gtk) 
+;; Make frames transparent (use pkgs.emacs-gtk)
 ;; (set-frame-parameter (selected-frame) 'alpha-background 93)
 ;; (add-to-list 'default-frame-alist '(alpha-background . 93))
 ;; (set-frame-parameter (selected-frame) 'fullscreen 'maximized)
@@ -77,21 +76,30 @@
  ;; If there is more than one, they won't work right.
  '(default ((t (:inherit nil :extend nil :stipple nil :background "#000000" :foreground "#ffffff" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight regular :height 105 :width normal :foundry "JB" :family "Fira Code"))))
  '(aw-mode-line-face ((t (:inherit modus-themes-bold :underline nil))))
+ '(button ((t (:foreground "yellow" :underline "yellow"))))
  '(compilation-line-number ((t nil)))
  '(corfu-bar ((t (:background "white"))))
  '(corfu-border ((t (:background "dark red"))))
  '(corfu-default ((t (:inherit modus-themes-fixed-pitch :background "black"))))
  '(cursor ((t (:background "red"))))
+ '(custom-button-mouse ((t (:inherit variable-pitch :background "dark magenta" :foreground "#ffffff" :box (:line-width (1 . 1) :color "#646464" :style released-button)))))
+ '(custom-link ((t (:inherit link))))
+ '(custom-state ((t (:foreground "green yellow"))))
+ '(custom-visibility ((t (:inherit link :foreground "yellow" :underline nil :height 0.8))))
  '(fringe ((t (:background "#080808" :foreground "#ffffff"))))
  '(lazy-highlight ((t (:background "DarkOrange1" :foreground "deep pink"))))
- '(line-number ((t (:inherit default :background "#080808" :foreground "gray22"))))
- '(line-number-current-line ((t (:inherit (bold default) :background "#080808" :foreground "red"))))
+ '(line-number ((t (:inherit default :background "black" :foreground "gray22"))))
+ '(line-number-current-line ((t (:inherit (bold default) :background "black" :foreground "red"))))
+ '(link ((t (:foreground "yellow" :underline "yellow"))))
+ '(link-visited ((t (:foreground "#feacd0" :underline "blue"))))
  '(mode-line ((t (:inherit modus-themes-ui-variable-pitch :background "black" :foreground "#ffffff" :box (:line-width (1 . 1) :color "#959595")))))
  '(mode-line-active ((t (:inherit modus-themes-ui-variable-pitch :background "dark red" :foreground "white" :box (:line-width (1 . 1) :color "dark red")))))
  '(mode-line-highlight ((t (:background "#45605e" :foreground "#ffffff" :box (:line-width (1 . 1) :color "#ffffff")))))
  '(tty-menu-disabled-face ((t (:background "#303030" :foreground "#989898"))))
  '(tty-menu-enabled-face ((t (:inherit bold :background "#303030" :foreground "#ffffff"))))
- '(tty-menu-selected-face ((t (:background "#1640b0" :foreground "#ffffff")))))
+ '(tty-menu-selected-face ((t (:background "#1640b0" :foreground "#ffffff"))))
+ '(window-divider ((t (:foreground "080808"))))
+ '(window-divider-first-pixel ((t nil))))
 (require 'use-package)
 (setq use-package-always-ensure t)
 
@@ -111,13 +119,25 @@
 ;;  :delight
 ;;  :hook (rust-ts-mode . scopeline-mode))
 
+;; Custom startup
+(add-hook 'emacs-startup-hook
+  (lambda ()
+    (let* ((buffer-hello (get-buffer-create "::::. ::: :::::...::")))
+      (switch-to-buffer buffer-hello)
+      (insert "")
+      (toggle-truncate-lines)
+      ;;(insert-image-file "~/Pictures/Fav pics/C229_825.png")
+      (delete-other-windows)
+      (message "burnt sage in my lungs where i find you\nhiding in a drawer like candy")
+      (buffer-modified-p)
+      (read-only-mode))))
+
 ;; Dabbrev
 (use-package dabbrev
   ;; Swap M-/ and C-M-/
   :bind (("M-/" . dabbrev-completion)
-         ("C-M-/" . dabbrev-expand))
-  :config
-  (add-to-list 'dabbrev-ignored-buffer-regexps "\\` ")
+	 ("C-M-/" . dabbrev-expand))
+  :config (add-to-list 'dabbrev-ignored-buffer-regexps "\\` ")
   (add-to-list 'dabbrev-ignored-buffer-modes 'authinfo-mode)
   (add-to-list 'dabbrev-ignored-buffer-modes 'doc-view-mode)
   (add-to-list 'dabbrev-ignored-buffer-modes 'pdf-view-mode)
@@ -127,20 +147,17 @@
 ;; Racer {via company}
 (require 'company-racer)
 
-(with-eval-after-load 'company
-     (add-to-list 'company-backends 'company-racer))
+(with-eval-after-load 'company (add-to-list 'company-backends 'company-racer))
 
-;; NeoTree 
+;; NeoTree
 ;; (add-to-list 'load-path "/path/to/directory")
 (require 'neotree)
 (global-set-key [f8] 'neotree-toggle)
 
 ;; Treemacs
 (use-package treemacs
-  :custom
-  (treemacs-position 'left)
-  :bind
-  ("C-c t" . treemacs)
+:custom (treemacs-position 'left)
+:bind ("C-c t" . treemacs)
   ;;  :init  ;; enables treemacs at startup
   ;;  (treemacs))
 )

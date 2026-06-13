@@ -1,102 +1,102 @@
 {pkgs, ...}: {
-  environment.systemPackages = with pkgs; [
-    nh
-    lf
-    git
-    bat
-    vim
-    meow
-    spek
-    htop
-    tree
-    btop
-    fish
-    curl
-    nixd
-    wget
-    zeek
-    gimp
-    emacs
-    kitty
-    e-imzo
-    tshark
-    netcat
-    cowsay
-    lolcat
-    ntfs3g
-    fractal
-    keymapp
-    tcpdump
-    element
-    pkgconf
-    hyfetch
-    lazygit
-    obsidian
-    keycloak
-    pgadmin4
-    ibm-plex
-    suricata
-    notonoto
-    firejail
-    pciutils
-    usbutils
-    sqlx-cli
-    alejandra
-    wireshark
-    postgresql
-    zed-editor
-    font-alias
-    noto-fonts
-    nixpkgs-fmt
-    element-web
-    rust-analyzer
-    e-imzo-manager
-    element-desktop
-    emacsPackages.doom
-    noto-fonts-color-emoji
-  ];
-
-  users.users.yago = {
-    isNormalUser = true;
-    shell = pkgs.fish;
-    description = "Kamol Khakimov";
-    extraGroups = [
-      "networkmanager"
-      "wireshark"
-      "wheel"
-    ];
-    packages = with pkgs; [
-      vlc
-      anki
-      #gimp
+    environment.systemPackages = with pkgs; [
+      nh
+      lf
+      git
+      bat
+      vim
+      meow
+      spek
+      htop
+      tree
+      btop
+      fish
+      curl
+      nixd
+      wget
+      zeek
+      gimp
       emacs
-      #lmms
-      nheko
-      #kicad
-      #krita
-      #ardour
-      discord
-      spotify
-      #blender
-      #gccgo14
-      audacity
-      gns3-gui
-      #guitarix
-      #openscad
-      librewolf
-      proton-vpn
-      obs-studio
-      thunderbird
-      qbittorrent
-      yandex-music
-      #pkgs.nerdfonts
-      kdePackages.kate
-      telegram-desktop
-      jetbrains-toolbox
-      #libsForQt5.kamoso
-      #ciscoPacketTracer8
-      #ciscoPacketTracer7
-      #libsForQt5.yakuake
+      kitty
+      e-imzo
+      tshark
+      netcat
+      cowsay
+      lolcat
+      ntfs3g
+      fractal
+      keymapp
+      tcpdump
+      element
+      pkgconf
+      hyfetch
+      lazygit
+      obsidian
+      keycloak
+      pgadmin4
+      ibm-plex
+      suricata
+      notonoto
+      firejail
+      pciutils
+      usbutils
+      sqlx-cli
+      alejandra
+      wireshark
+      postgresql
+      zed-editor
+      font-alias
+      noto-fonts
+      nixpkgs-fmt
+      element-web
+      rust-analyzer
+      e-imzo-manager
+      element-desktop
+      emacsPackages.doom
+      noto-fonts-color-emoji
     ];
-  };
-}
+
+    users.users.yago = {
+      isNormalUser = true;
+      shell = pkgs.fish;
+      description = "Kamol Khakimov";
+      extraGroups = [
+        "networkmanager"
+        "wireshark"
+        "wheel"
+      ];
+      packages = with pkgs; [
+        vlc
+        anki
+        #gimp
+        emacs
+        #lmms
+        #nheko
+        #kicad
+        #krita
+        #ardour
+        discord
+        spotify
+        #blender
+        #gccgo14
+        audacity
+        gns3-gui
+        #guitarix
+        #openscad
+        librewolf
+        proton-vpn
+        obs-studio
+        thunderbird
+        qbittorrent
+        yandex-music
+        #pkgs.nerdfonts
+        kdePackages.kate
+        telegram-desktop
+        jetbrains-toolbox
+        #libsForQt5.kamoso
+        #ciscoPacketTracer8
+        #ciscoPacketTracer7
+        #libsForQt5.yakuake
+      ];
+    };
+  }
