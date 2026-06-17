@@ -47,7 +47,16 @@
   } @ inputs: let
     # Supported system (x86_64 architecture only)
     system = "x86_64-linux";
-      
+
+    tex = (pkgs.texliveBasic.withPackages (
+      ps: with ps; [
+        dvisvgm dvipng # for preview and export as html
+        wrapfig amsmath ulem hyperref capt-of
+        #(setq org-latex-compiler "lualatex")
+        #(setq org-preview-latex-default-process 'dvisvgm)
+    ]));
+    
+
     # allow_unfree packages
     pkgs = import nixpkgs {
       inherit system; # system = system;
@@ -73,6 +82,11 @@
         inherit self inputs pkgsWithOverlays;
       };
     };
+
+    home.packages = with pkgs; [
+      tex
+    ];
+
 
     # Home manager
     homeConfigurations.yago = home-manager.lib.homeManagerConfiguration {

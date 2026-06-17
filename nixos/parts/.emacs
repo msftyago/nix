@@ -98,7 +98,7 @@
  '(tty-menu-disabled-face ((t (:background "#303030" :foreground "#989898"))))
  '(tty-menu-enabled-face ((t (:inherit bold :background "#303030" :foreground "#ffffff"))))
  '(tty-menu-selected-face ((t (:background "#1640b0" :foreground "#ffffff"))))
- '(window-divider ((t (:foreground "080808"))))
+ '(window-divider ((t (:foreground "#080808"))))
  '(window-divider-first-pixel ((t nil))))
 (require 'use-package)
 (setq use-package-always-ensure t)
@@ -114,50 +114,49 @@
 ;;      corfu-quit-no-match 'separator) ;; or use t
 
 ;; Scopeline
-;; (use-package scopeline
-;;  :ensure t
-;;  :delight
-;;  :hook (rust-ts-mode . scopeline-mode))
+;;(use-package scopeline 
+;;:ensure t 
+;;:delight 
+;;:hook (rust-ts-mode . scopeline-mode))
 
 ;; Custom startup
-(add-hook 'emacs-startup-hook
-  (lambda ()
-    (let* ((buffer-hello (get-buffer-create "::::. ::: :::::...::")))
-      (switch-to-buffer buffer-hello)
-      (insert "")
-      (toggle-truncate-lines)
+(add-hook 'emacs-startup-hook (lambda () 
+(let* ((buffer-hello (get-buffer-create "::::. ::: :::::...::"))) 
+(switch-to-buffer buffer-hello) 
+(insert "") 
+(toggle-truncate-lines)
       ;;(insert-image-file "~/Pictures/Fav pics/C229_825.png")
-      (delete-other-windows)
-      (message "There is only time. A circular pattern, a hex I abide ")
-      (buffer-modified-p)
-      (read-only-mode))))
+      (delete-other-windows) 
+(message "There is only time. A circular pattern, a hex I abide ") 
+(buffer-modified-p) 
+(read-only-mode))))
+
+;; Rustic
+;;(use-package rustic 
+;;:ensure t 
+;;:config (setq rustic-format-on-save nil) 
+;;:custom (rustic-cargo-use-last-stored-arguments t))
 
 ;; Dabbrev
 (use-package dabbrev
   ;; Swap M-/ and C-M-/
-  :bind (("M-/" . dabbrev-completion)
-	 ("C-M-/" . dabbrev-expand))
-  :config (add-to-list 'dabbrev-ignored-buffer-regexps "\\` ")
-  (add-to-list 'dabbrev-ignored-buffer-modes 'authinfo-mode)
-  (add-to-list 'dabbrev-ignored-buffer-modes 'doc-view-mode)
-  (add-to-list 'dabbrev-ignored-buffer-modes 'pdf-view-mode)
-  (add-to-list 'dabbrev-ignored-buffer-modes 'tags-table-mode))
-
+  :bind (("M-/" . dabbrev-completion) 
+("C-M-/" . dabbrev-expand)) 
+:config (add-to-list 'dabbrev-ignored-buffer-regexps "\\` ") 
+(add-to-list 'dabbrev-ignored-buffer-modes 'authinfo-mode) 
+(add-to-list 'dabbrev-ignored-buffer-modes 'doc-view-mode) 
+(add-to-list 'dabbrev-ignored-buffer-modes 'pdf-view-mode) 
+(add-to-list 'dabbrev-ignored-buffer-modes 'tags-table-mode))
 
 ;; Racer {via company}
 (require 'company-racer)
-
 (with-eval-after-load 'company (add-to-list 'company-backends 'company-racer))
 
-;; NeoTree
-;; (add-to-list 'load-path "/path/to/directory")
-(require 'neotree)
-(global-set-key [f8] 'neotree-toggle)
+;;(add-hook 'rust-mode-hook #'tree-sitter-mode)
 
 ;; Treemacs
+(require 'treemacs)
+(global-set-key [f8] 'treemacs)
 (use-package treemacs
 :custom (treemacs-position 'left)
-:bind ("C-c t" . treemacs)
-  ;;  :init  ;; enables treemacs at startup
-  ;;  (treemacs))
-)
+:bind ("C-c t" . treemacs))

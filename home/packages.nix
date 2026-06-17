@@ -55,7 +55,7 @@
     usbutils
     #blender
     #gccgo14
-   audacity
+    audacity
     celestia
     gpredict
     obsidian
@@ -74,6 +74,7 @@
     #pkgs.hello
     nixpkgs-fmt
     qbittorrent
+    texliveFull
     yandex-music
     rust-analyzer
     liberation_ttf

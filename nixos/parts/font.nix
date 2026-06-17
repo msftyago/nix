@@ -2,23 +2,32 @@
   fonts = {
     enableDefaulPackages = true;
     packages = with pkgs; [
-      roboto
+      mplus-outline-fonts.githubRelease
+      noto-fonts-color-emoji
+      noto-fonts-cjk-sans
+      fira-code-symbols
       liberation_ttf
+      fira-code
+      proggyfonts
+      noto-fonts
+      dina-font
+
+      inter-nerdfont
+      dejavu_fonts
+      ibm-plex
+      hack-font
+      raleway
+      inter
+      roboto
       #work-sans
       #comic-neue
       #source-sans
       #dejavu_fonts
 
-      # Noto
-      #noto-fonts
-      #noto-fonts-cjk-sans
-      noto-fonts-color-emoji
-
+      googlesans-code
+      jetbrains-mono
       iosevka
       fira-sans
-      fira-code
-      jetbrains-mono
-      googlesans-code
       #openmoji-color
       #twemoji-color-font
       #corefonts
