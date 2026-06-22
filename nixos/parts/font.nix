@@ -1,5 +1,6 @@
 {pkgs, ...}: {
   fonts = {
+    fontDir.enable = true;
     enableDefaulPackages = true;
     packages = with pkgs; [
       mplus-outline-fonts.githubRelease

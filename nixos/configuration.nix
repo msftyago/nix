@@ -13,13 +13,13 @@
   imports = [
     inputs.home-manager.nixosModules.home-manager
     ./hardware-configuration.nix
-    ../modules/packages.nix #INFO: environment & user packages
+    ../modules/packages.nix
     ./parts/audio.nix
     ./parts/game.nix
     ./parts/pkt.nix
   ];
 
-  # CVE-2026-31431
+  # CVE-2026-31431 patch
   boot.kernelPackages = lib.mkIf (lib.versionOlder pkgs.linux.version "6.18.22") (
     lib.mkDefault pkgs.linuxPackages_6_18
   );
@@ -39,7 +39,6 @@
   };
 
   nixpkgs.config.permittedInsecurePackages = [
-    "ciscoPacketTracer8-8.2.2"
     "olm-3.2.16"
   ];
 

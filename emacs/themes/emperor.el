@@ -1,28 +1,10 @@
-(setq inhibit-startup-screen t)
-;;; -*- lexical-binding: t -*-
-
-;;  ___ __  __   _   ___ ___                __ _
-;; | __|  \/  | /_\ / __/ __|  __ ___ _ _  / _(_)__ _
-;; | _|| |\/| |/ _ \ (__\__ \ / _/ _ \ ' \|  _| / _` |
-;; |___|_|  |_/_/ \_\___|___/ \__\___/_||_|_| |_\__, |
-;;                                              |___/
-;;
-;; https://github.com/msftyago/nix/nixos/parts/.emacs
-
-;; tty
-(add-hook 'tty-setup-hook (lambda ()
-(set-face-background 'default "unspecified-bg")
-(set-face-background 'line-number "unspecified-bg")
-(set-face-background 'line-number-current-line "unspecified-bg")
-(set-face-background 'region "unspecified-bg")))
-
 ;; Custom preferences
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(battery-mode-line-format "(%b%p%%)")
+ '(battery-mode-line-format " %b%p%%")
  '(blink-cursor-blinks 1)
  '(blink-cursor-delay 0)
  '(blink-cursor-interval 0.2)
@@ -56,17 +38,6 @@
  '(scroll-bar-mode nil)
  '(tool-bar-mode nil))
 
-(use-package emacs
-:init (global-set-key (kbd "C-=") 'text-scale-increase)
-(global-set-key (kbd "C--") 'text-scale-decrease)
-(global-set-key [f8] 'neotree-toggle)
-(global-set-key [f7] 'company-clang))
-
-;; Make frames transparent (use pkgs.emacs-gtk)
-;; (set-frame-parameter (selected-frame) 'alpha-background 93)
-;; (add-to-list 'default-frame-alist '(alpha-background . 93))
-;; (set-frame-parameter (selected-frame) 'fullscreen 'maximized)
-;; (add-to-list 'default-frame-alist '(fullscreen . maximized)))
 
 ;; Custom Faces (M-x customize)
 (custom-set-faces
@@ -102,61 +73,3 @@
  '(window-divider-first-pixel ((t nil))))
 (require 'use-package)
 (setq use-package-always-ensure t)
-
-;; Corfu
-;;(use-package corfu
-;;  :custom
-;;  (text-mode-ispell-word-completion nil))
-;;(advice-add 'eglot-completion-at-point :around #'cape-wrap-buster)
-;;(setq corfu-auto t
-;;      corfu-auto-delay 0.2
-;;      corfu-auto-trigger "."
-;;      corfu-quit-no-match 'separator) ;; or use t
-
-;; Scopeline
-;;(use-package scopeline 
-;;:ensure t 
-;;:delight 
-;;:hook (rust-ts-mode . scopeline-mode))
-
-;; Custom startup
-(add-hook 'emacs-startup-hook (lambda () 
-(let* ((buffer-hello (get-buffer-create "::::. ::: :::::...::"))) 
-(switch-to-buffer buffer-hello) 
-(insert "") 
-(toggle-truncate-lines)
-      ;;(insert-image-file "~/Pictures/Fav pics/C229_825.png")
-      (delete-other-windows) 
-(message "There is only time. A circular pattern, a hex I abide ") 
-(buffer-modified-p) 
-(read-only-mode))))
-
-;; Rustic
-;;(use-package rustic 
-;;:ensure t 
-;;:config (setq rustic-format-on-save nil) 
-;;:custom (rustic-cargo-use-last-stored-arguments t))
-
-;; Dabbrev
-(use-package dabbrev
-  ;; Swap M-/ and C-M-/
-  :bind (("M-/" . dabbrev-completion) 
-("C-M-/" . dabbrev-expand)) 
-:config (add-to-list 'dabbrev-ignored-buffer-regexps "\\` ") 
-(add-to-list 'dabbrev-ignored-buffer-modes 'authinfo-mode) 
-(add-to-list 'dabbrev-ignored-buffer-modes 'doc-view-mode) 
-(add-to-list 'dabbrev-ignored-buffer-modes 'pdf-view-mode) 
-(add-to-list 'dabbrev-ignored-buffer-modes 'tags-table-mode))
-
-;; Racer {via company}
-(require 'company-racer)
-(with-eval-after-load 'company (add-to-list 'company-backends 'company-racer))
-
-;;(add-hook 'rust-mode-hook #'tree-sitter-mode)
-
-;; Treemacs
-(require 'treemacs)
-(global-set-key [f8] 'treemacs)
-(use-package treemacs
-:custom (treemacs-position 'left)
-:bind ("C-c t" . treemacs))

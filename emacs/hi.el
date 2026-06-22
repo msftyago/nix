@@ -1,0 +1,11 @@
+;; Custom startup
+(add-hook 'emacs-startup-hook (lambda () 
+(let* ((buffer-hello (get-buffer-create "::::. ::: :::::...::"))) 
+(switch-to-buffer buffer-hello) 
+(insert "") 
+(toggle-truncate-lines)
+      ;;(insert-image-file "~/Pictures/Fav pics/C229_825.png")
+      (delete-other-windows) 
+(message "There is only time. A circular pattern, a hex I abide ") 
+(buffer-modified-p) 
+(read-only-mode))))

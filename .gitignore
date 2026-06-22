@@ -8,6 +8,7 @@ auto-save-list
 tramp
 .\#*
 ./nixos/parts/.secrets
+./modules/catnet.nix 
 
 # Org-mode
 .org-id-locations

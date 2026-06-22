@@ -17,6 +17,7 @@
       #enlight
       neotree
       treemacs
+      wat-mode
       transwin
       scopeline
       grip-mode
@@ -31,6 +32,7 @@
       markdown-mode
       #wakatime-mode
       #sideline-eglot
+      multiple-cursors
       #sideline-flymake
       #sideline-flycheck
       rainbow-delimiters
