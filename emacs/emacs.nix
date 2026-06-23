@@ -8,12 +8,13 @@
       anzu
       magit
       corfu
+      flymd
       #racer
       direnv
       pandoc
       blamer
       quelpa
-      #rustic
+      rustic
       #enlight
       neotree
       treemacs
@@ -47,7 +48,6 @@
       elisp-def
       elisp-refs
       elisp-format
-
       # Tree-sitter & Rust
       #rustic
       #rust-mode

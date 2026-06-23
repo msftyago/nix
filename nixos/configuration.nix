@@ -42,8 +42,10 @@
     "olm-3.2.16"
   ];
 
-  services.postgresql.enable = true;
-  services.postgresql.package = pkgs.postgresql_15;
+  services.postgresql = {
+    enable = true;
+    package = pkgs.postgresql_15;
+  };
   
   services.udev = {
     extraRules = ''
@@ -123,12 +125,11 @@
   hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
   services.blueman.enable = true;
 
-  virtualisation.virtualbox.host.enable = true;
-  users.extraGroups.vboxusers.members = ["yago"];
-  virtualisation.virtualbox.host.enableExtensionPack = true;
-  virtualisation.virtualbox.guest.enable = true;
-
-  programs.firefox.enable = true;
+  # virtualisation.virtualbox.host.enable = true;
+  # users.extraGroups.vboxusers.members = ["yago"];
+  # virtualisation.virtualbox.host.enableExtensionPack = true;
+  # virtualisation.virtualbox.guest.enable = true;
+  
   programs.fish.enable = true;
 
   nixpkgs.config.allowUnfree = true;

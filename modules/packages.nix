@@ -1,5 +1,5 @@
 {pkgs, ...}: {
-    environment.systemPackages = with pkgs; [
+  environment.systemPackages = with pkgs; [
       nh
       lf
       git
@@ -13,46 +13,38 @@
       fish
       curl
       nixd
-      wget
-      zeek
-      gimp
+      yazi
       emacs
       kitty
-      e-imzo
-      tshark
-      netcat
+      direnv
       cowsay
       lolcat
       ntfs3g
-      fractal
-      keymapp
-      tcpdump
-      element
+      openocd
+      rustfmt
       pkgconf
       hyfetch
       lazygit
-      obsidian
+      ripgrep
       keycloak
       pgadmin4
-      ibm-plex
-      suricata
       notonoto
       firejail
       pciutils
       usbutils
       sqlx-cli
+      nixpkgs-fmt
       alejandra
-      wireshark
+      man-pages
       postgresql
-      zed-editor
       font-alias
       noto-fonts
       nixpkgs-fmt
-      element-web
       rust-analyzer
-      e-imzo-manager
-      element-desktop
-      emacsPackages.doom
+      man-pages-posix
+      gnome-disk-utility
+      bluez-experimental
+      python312Packages.pip
       noto-fonts-color-emoji
     ];
 
@@ -67,28 +59,36 @@
       ];
       packages = with pkgs; [
         vlc
+        nyxt
         anki
-        #gimp
+        gimp
         emacs
         #lmms
         #nheko
         #kicad
         #krita
         #ardour
+        fractal
+        element
+        keymapp
         discord
         spotify
         #blender
+        obsidian
         #gccgo14
         audacity
         gns3-gui
         #guitarix
         #openscad
         librewolf
+        wireshark
         proton-vpn
         obs-studio
+        element-web
         thunderbird
         qbittorrent
         yandex-music
+        element-desktop
         #pkgs.nerdfonts
         kdePackages.kate
         telegram-desktop
@@ -97,6 +97,7 @@
         #ciscoPacketTracer8
         #ciscoPacketTracer7
         #libsForQt5.yakuake
+        libreoffice-qt6-still
       ];
     };
   }
