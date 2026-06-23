@@ -23,7 +23,7 @@
   imports = [
     ./home/packages.nix
     #./home/programs/kanata #TODO: fix the user group permissions
-    ./nixos/parts/emacs.nix
+    ./emacs/emacs.nix
   ];
 
   home.file = {};

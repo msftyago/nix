@@ -59,7 +59,7 @@
       ];
       packages = with pkgs; [
         vlc
-        nyxt
+        #nyxt
         anki
         gimp
         emacs
