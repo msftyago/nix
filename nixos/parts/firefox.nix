@@ -1,4 +1,5 @@
-programs.firefox = {
+{pkgs, lib, ...}: {
+  programs.firefox = {
   enable = true;
 
   languagePacks = [ "en-US" "en-GB" ];
@@ -33,7 +34,7 @@ programs.firefox = {
     DontCheckDefaultBrowser       = true;
     HardwareAcceleration          = false;
     OfferToSaveLogins             = false;
-    DefaultDownloadDirectory      = "${home}/Downloads";
+    DefaultDownloadDirectory      = "/home/yago/Downloads";
 
     # Extensions
     ExtensionSettings = let
@@ -62,12 +63,12 @@ programs.firefox = {
 
     # Extension configuration 
     "3rdparty".Extensions = {
-      "uBlock0@raymondhill.net".adminSettings = {
-        userSettings = rec {
-          uiTheme            = "dark";
-          uiAccentCustom     = true;
-          uiAccentCustom0    = "#8300ff";
-          cloudStorageEnabled = mkForce false;
+     "uBlock0@raymondhill.net".adminSettings = {
+      userSettings = rec {
+       uiTheme            = "dark";
+      uiAccentCustom     = true;
+     uiAccentCustom0    = "#8300ff";
+    cloudStorageEnabled = lib.mkForce false;
 
           importedLists = [
             "https://filters.adtidy.org/extension/ublock/filters/3.txt"
@@ -75,12 +76,12 @@ programs.firefox = {
           ];
 
           externalLists = lib.concatStringsSep "\n" importedLists;
-        };
+       };
 
-        selectedFilterLists = [
-          "CZE-0"
-          "adguard-generic"
-          "adguard-annoyance"
+      selectedFilterLists = [
+       "CZE-0"
+      "adguard-generic"
+     "adguard-annoyance"
           "adguard-social"
           "adguard-spyware-url"
           "easylist"
@@ -89,9 +90,9 @@ programs.firefox = {
           "plowe-0"
           "ublock-abuse"
           "ublock-badware"
-          "ublock-filters"
-          "ublock-privacy"
-          "ublock-quick-fixes"
+    "ublock-filters"
+      "ublock-privacy"
+      "ublock-quick-fixes"
           "ublock-unbreak"
           "urlhaus-1"
         ];
@@ -99,7 +100,7 @@ programs.firefox = {
     };
   };
 
-  profiles.default.search = {
+  policies.default.search = {
     force           = true;
     default         = "DuckDuckGo";
     privateDefault  = "DuckDuckGo";
@@ -148,3 +149,4 @@ programs.firefox = {
     };
   };
 };
+}
