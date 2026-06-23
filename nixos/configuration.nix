@@ -14,6 +14,7 @@
     inputs.home-manager.nixosModules.home-manager
     ./hardware-configuration.nix
     ../modules/packages.nix
+    ./parts/firefox.nix
     ./parts/audio.nix
     ./parts/game.nix
     ./parts/pkt.nix
