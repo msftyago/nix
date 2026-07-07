@@ -16,16 +16,21 @@
       yazi
       emacs
       kitty
+      oxker
       direnv
       cowsay
       lolcat
+      bottom
       ntfs3g
+      csvlens
       openocd
       rustfmt
       pkgconf
       hyfetch
       lazygit
       ripgrep
+      onefetch
+      binsider
       keycloak
       pgadmin4
       notonoto
@@ -33,7 +38,7 @@
       pciutils
       usbutils
       sqlx-cli
-      nixpkgs-fmt
+      scope-tui
       alejandra
       man-pages
       postgresql

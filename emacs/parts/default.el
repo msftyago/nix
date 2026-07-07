@@ -2,6 +2,7 @@
 ;; ←-------------- DEFAULT -------------------→
 ;;
 
+(load-file "/home/yago/nix/emacs/parts/xclip.el")
 (load-file "/home/yago/nix/emacs/parts/corfu.el")
 (load-file "/home/yago/nix/emacs/parts/rustic.el")
 (load-file "/home/yago/nix/emacs/parts/dabbrev.el")
@@ -10,7 +11,6 @@
 
 (use-package emacs
 :init
-(global-set-key [f8] 'neotree-toggle)
 (global-set-key [f7] 'company-clang))
 
 ;; Racer {via company}

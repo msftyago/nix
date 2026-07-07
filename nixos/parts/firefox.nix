@@ -48,24 +48,36 @@
         updates_disabled  = true;
       };
 
-      "{f3b4b962-34b4-4935-9eee-45b0bce58279}" = {
-        install_url       = moz "animated-purple-moon-lake";
+      "{41bb7295-c2bd-4e13-885f-dc67cb983c17}" = {
+        install_url = moz "2black";
         installation_mode = "force_installed";
-        updates_disabled  = true;
+        updates_disabled = true;
       };
 
-      "{73a6fe31-595d-460b-a920-fcc0f8843232}" = {
-        install_url       = moz "noscript";
+      "addon@darkreader.org" = {
+        install_url = moz "darkreader";
         installation_mode = "force_installed";
-        updates_disabled  = true;
+        updates_disabled = true;
       };
+
+      #"{f3b4b962-34b4-4935-9eee-45b0bce58279}" = {
+      # install_url       = moz "animated-purple-moon-lake";
+      # installation_mode = "force_installed";
+      #  updates_disabled  = true;
+      #};
+
+      #"{73a6fe31-595d-460b-a920-fcc0f8843232}" = {
+      #install_url       = moz "noscript";
+      #installation_mode = "force_installed";
+      #updates_disabled  = true;
+     #};
     };
 
     # Extension configuration 
     "3rdparty".Extensions = {
      "uBlock0@raymondhill.net".adminSettings = {
       userSettings = rec {
-       uiTheme            = "dark";
+       uiTheme            = "dark-nivgvrv";
       uiAccentCustom     = true;
      uiAccentCustom0    = "#8300ff";
     cloudStorageEnabled = lib.mkForce false;
@@ -80,21 +92,21 @@
 
       selectedFilterLists = [
        "CZE-0"
-      "adguard-generic"
-     "adguard-annoyance"
-          "adguard-social"
-          "adguard-spyware-url"
-          "easylist"
-          "easyprivacy"
-          "https://github.com/DandelionSprout/adfilt/raw/master/LegitimateURLShortener.txt"
-          "plowe-0"
-          "ublock-abuse"
-          "ublock-badware"
-    "ublock-filters"
-      "ublock-privacy"
-      "ublock-quick-fixes"
-          "ublock-unbreak"
-          "urlhaus-1"
+       "adguard-generic"
+       "adguard-annoyance"
+       "adguard-social"
+       "adguard-spyware-url"
+       "easylist"
+       "easyprivacy"
+       "https://github.com/DandelionSprout/adfilt/raw/master/LegitimateURLShortener.txt"
+       "plowe-0"
+       "ublock-abuse"
+       "ublock-badware"
+       "ublock-filters"
+       "ublock-privacy"
+       "ublock-quick-fixes"
+       "ublock-unbreak"
+       "urlhaus-1"
         ];
       };
     };

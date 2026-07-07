@@ -4,12 +4,14 @@
     dig
     wget
     zeek
+    trippy
     snicat
     netcat
     tshark
     tcpdump
     nethack
     suricata
+    bandwhich
     inetutils
     
   ];

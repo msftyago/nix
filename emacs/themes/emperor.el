@@ -17,7 +17,7 @@
      "7e98dc1aa7f5db0557691da690c38d55e83ddd33c6d268205d66e430d57fb982"
      default))
  '(display-battery-mode t)
- '(display-line-numbers t)
+ ;; '(display-line-numbers t)
  '(fancy-splash-image nil)
  '(menu-bar-mode nil)
  '(mode-line-format

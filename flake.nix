@@ -25,6 +25,13 @@
     # GNU Emacs my beloved
     # doom-emacs.url = "github:nix-community/nix-doom-emacs";
 
+    # Better blur
+    kwin-effects-forceblur = {
+      url = "github:taj-ny/kwin-effects-forceblur";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+
     # zen-browser.url = "github:youwen5/zen-browser-flake";
     # zen-browser.inputs.nixpkgs.follows = "nixpkgs";
         

@@ -38,7 +38,8 @@
      "7e98dc1aa7f5db0557691da690c38d55e83ddd33c6d268205d66e430d57fb982"
      default))
  '(display-battery-mode t)
- '(display-line-numbers t)
+ ;; '(display-line-numbers t)
+ ;; '(rainbow-delimiters-mode-enable t)
  '(fancy-splash-image nil)
  '(menu-bar-mode nil)
  '(mode-line-format
@@ -53,7 +54,18 @@
      "  " mode-line-modes mode-line-misc-info))
  '(mode-line-right-align-edge 'right-fringe)
  '(newsticker-url-list '(("meow" "https://meow.uz/rss.xml" nil 86400 nil)))
- '(package-selected-packages nil)
+ '(package-selected-packages
+   '(aggressive-indent all-the-icons anzu auto-org-md blamer
+		       company-racer corfu direnv ef-themes
+		       elisp-autofmt elisp-def elisp-format elisp-refs
+		       elpaca flycheck flymd grip-mode helm kkp
+		       lsp-treemacs magit math-symbol-lists meow
+		       mermaid-mode multiple-cursors neotree nix-mode
+		       org-journal org-modern org-superstar pacmacs
+		       pandoc pdf-tools pgmacs quelpa
+		       rainbow-delimiters rustic scopeline transwin
+		       treemacs-nerd-icons treemacs-tab-bar wat-mode
+		       wat-ts-mode ztree))
  '(package-vc-selected-packages
    '((pgmacs :vc-backend Git :url "https://github.com/emarsden/pgmacs")
      (pg :vc-backend Git :url "https://github.com/emarsden/pg-el")))

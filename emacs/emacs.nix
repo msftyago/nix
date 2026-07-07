@@ -5,7 +5,9 @@
       avy
       kkp
       meow
+      helm
       anzu
+      xclip
       magit
       corfu
       flymd
@@ -20,6 +22,7 @@
       treemacs
       wat-mode
       transwin
+      fish-mode
       scopeline
       grip-mode
       pdf-tools
@@ -33,6 +36,7 @@
       markdown-mode
       #wakatime-mode
       #sideline-eglot
+      cargo-transient
       multiple-cursors
       #sideline-flymake
       #sideline-flycheck
