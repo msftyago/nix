@@ -2,12 +2,17 @@
   pkgs,
   ...
 }: {
+
+  imports = [
+    ./programs/obs
+    ./programs/kitty
+  ];
+  
   home.packages = with pkgs; [
     gh
     starfetch
     zed-editor
     codeblocks
-    obs-studio
     platformio
     
     # # overrides. You can do that directly here, just don't forget the
