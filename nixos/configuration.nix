@@ -87,6 +87,8 @@
     ];
   };
 
+  boot.initrd.luks.devices."luks-2c20d866-584a-4f7e-8ba8-b5422eb4deca".device = "/dev/disk/by-uuid/2c20d866-584a-4f7e-8ba8-b5422eb4deca";
+
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
@@ -99,7 +101,6 @@
   time.timeZone = "Asia/Tashkent";
   i18n.defaultLocale = "en_GB.UTF-8";
   console = {
-    font = "Lat2-Terminus16";
     #keyMap = "us";
     useXkbConfig = true; # use xkb.options in tty.
   };
@@ -107,13 +108,9 @@
   # X11
   services.xserver.enable = true;
   services.xserver = {
-    xkb.layout = "us";
+    xkb.layout = "gb";
     xkb.variant = "";
   };
-
-  # Configure keymap in X11
-  # services.xserver.xkb.layout = "us";
-  # services.xserver.xkb.options = "eurosign:e,caps:escape";
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -147,6 +144,6 @@
   # networking.firewall.allowedUDPPorts = [ ... ];
   # networking.firewall.enable = false;
 
+  system.stateVersion = "26.05"; # Did you read the comment?
   # https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
-  system.stateVersion = "25.11"; # Did you read the comment?
 }
