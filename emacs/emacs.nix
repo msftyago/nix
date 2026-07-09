@@ -15,6 +15,7 @@
       direnv
       pandoc
       blamer
+      docker
       quelpa
       rustic
       #enlight
@@ -26,6 +27,8 @@
       scopeline
       grip-mode
       pdf-tools
+      docker-cli
+      lsp-docker
       wat-ts-mode
       auto-org-md
       lsp-treemacs
@@ -37,6 +40,7 @@
       #wakatime-mode
       #sideline-eglot
       cargo-transient
+      dockerfile-mode
       multiple-cursors
       #sideline-flymake
       #sideline-flycheck

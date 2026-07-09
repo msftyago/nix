@@ -7,14 +7,14 @@
     editor = "emacs";
 
     # Extra config
-    include = "current-theme.conf";
+    include = "/etc/home/.config/kitty/current-theme.conf";
 
     # Font
     font_family = "DejaVu Sans Mono";
     font_size = "9.0";
 
     # Cursor & Mouse
-    cursor_tail = 3;
+    cursor_tail = 1;
     cursor_shape = "beam";
     mouse_hide_wait = "-1.0";
     cursor_beam_thickness = "1.666";
@@ -37,7 +37,6 @@
     window_padding_width = 4;
     enable_audio_bell = false;    
     confirm_os_window_close = 0;
+   };
   };
-  };
-  
 }
