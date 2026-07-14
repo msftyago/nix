@@ -1,24 +1,4 @@
-{pkgs, ...}: {
-
-  # home.packages = with pkgs; [
-  #   gh
-  #   starfetch
-  #   zed-editor
-  #   codeblocks
-    
-  #   # # overrides. You can do that directly here, just don't forget the
-  #   # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
-  #   # # fonts?
-  #   #(pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
-
-  #   # # You can also create simple shell scripts directly inside your
-  #   # # configuration. For example, this adds a command 'my-hello' to your
-  #   # # environment:
-  #   # (pkgs.writeShellScriptBin "my-hello" ''
-  #   #   echo "Hello, ${config.home.username}!"
-  #   # '')
-  # ];
-  
+{pkgs, ...}: {  
   environment.systemPackages = with pkgs; [
       nh
       lf
@@ -92,6 +72,7 @@
         #nheko
         #kicad
         #krita
+        docker
         #ardour
         fractal
         element
@@ -107,12 +88,14 @@
         #openscad
         librewolf
         wireshark
+        dockerfmt
         proton-vpn
         obs-studio
         element-web
         thunderbird
         qbittorrent
         yandex-music
+        docker-compose
         element-desktop
         #pkgs.nerdfonts
         kdePackages.kate
@@ -122,7 +105,9 @@
         #ciscoPacketTracer8
         #ciscoPacketTracer7
         #libsForQt5.yakuake
+        docker-color-output
         libreoffice-qt6-still
+        dockerfile-language-server
       ];
     };
   }

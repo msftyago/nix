@@ -34,12 +34,8 @@
     };
   };
 
-  programs = {
-    nix-ld = {
-      enable = true;
-    };
-  };
-
+  programs.nix-ld.enable = true;
+  
   nixpkgs.config.permittedInsecurePackages = [
     "olm-3.2.16"
   ];
@@ -48,6 +44,8 @@
     enable = true;
     package = pkgs.postgresql_15;
   };
+
+  virtualisation.docker.enable = true;
   
   services.udev = {
     extraRules = ''

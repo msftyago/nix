@@ -45,6 +45,7 @@
       #sideline-flymake
       #sideline-flycheck
       rainbow-delimiters
+      docker-compose-mode
 
       # Treemacs
       treemacs-tab-bar
