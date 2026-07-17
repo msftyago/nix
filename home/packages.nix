@@ -10,6 +10,7 @@
   
   home.packages = with pkgs; [
     gh
+    putty
     starfetch
     zed-editor
     codeblocks

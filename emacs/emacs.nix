@@ -2,6 +2,14 @@
   programs.emacs = {
     enable = true;
     extraPackages = epkgs: with epkgs; [
+      # Network
+      #doom
+      eping
+      ipcalc
+      nethack
+      # netrunner
+      cabledolphin
+
       avy
       kkp
       meow
@@ -23,11 +31,13 @@
       treemacs
       wat-mode
       transwin
+      toml-mode      
       fish-mode
       scopeline
       grip-mode
       pdf-tools
       docker-cli
+      org-modern
       lsp-docker
       wat-ts-mode
       auto-org-md
@@ -47,6 +57,17 @@
       rainbow-delimiters
       docker-compose-mode
 
+      # Nix & NixOS
+      nixfmt
+      nix-mode
+      nix-buffer
+      nixpkgs-fmt
+      nix-sandbox		
+      nix-modeline
+      org-nix-shell
+      nixos-options
+      pretty-sha-path
+      
       # Treemacs
       treemacs-tab-bar
       treemacs-nerd-icons
@@ -61,7 +82,7 @@
       #rustic
       #rust-mode
       #tree-sitter
-      #nix-ts-mode
+      nix-ts-mode
       #rust-ts-mode
       #graphql-ts-mode
       #tree-sitter-langs

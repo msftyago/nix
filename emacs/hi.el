@@ -1,10 +1,10 @@
 ;; Custom startup
 (add-hook 'emacs-startup-hook
 	  (lambda () 
-	    (let* ((buffer-hello (get-buffer-create ":3"))) 
+	    (let* ((buffer-hello (get-buffer-create "GNU Emacs"))) 
 	      (switch-to-buffer buffer-hello)
 	      (insert "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
-	      (insert "")
+	      (insert "    ")
 	      ;; (disable-command )
 	      (insert "\n")
 	      (center-paragraph)

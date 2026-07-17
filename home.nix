@@ -21,9 +21,10 @@
   nixpkgs.config.allowUnfree = true;
 
   imports = [
-    ./home/packages.nix
-    #./home/programs/kanata #TODO: fix the user group permissions
     ./emacs/emacs.nix
+    ./home/packages.nix
+    # # TODO: fix the user group permissions
+    # ./home/programs/kanata
   ];
 
   home.file = {};

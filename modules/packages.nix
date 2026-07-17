@@ -17,6 +17,7 @@
       emacs
       kitty
       oxker
+      whois
       direnv
       cowsay
       lolcat
@@ -63,6 +64,21 @@
         "wheel"
       ];
       packages = with pkgs; [
+        # Network
+        dig
+        wget
+        zeek
+        trippy
+        snicat
+        netcat
+        tshark
+        tcpdump
+        nethack
+        suricata
+        bandwhich
+        inetutils
+        
+        # Absolute kasha
         vlc
         #nyxt
         anki

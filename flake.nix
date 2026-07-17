@@ -6,20 +6,14 @@
 
 
   NixOS running on Ryzen 7 5800H, Nvidia GeForce RTX3060 6GB Mobile, 16GB RAM
-  Main machine, laptop -- Acer NITRO5 AN515-45
+  Main machine, laptop -- x86_64linux :: Acer NITRO5 AN515-45
   */
 
   description = "yago's flake configuration";
 
-  nixConfig = {
-    experimental-features = ["nix-command" "flakes"];
-  };
+  nixConfig.experimental-features = ["nix-command" "flakes"];
 
   inputs = {
-    # Nixpkgs stable (Xantusia 25.11)
-    # nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
-
-    # Nixpkgs beta
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
     
     # GNU Emacs my beloved
@@ -30,7 +24,6 @@
     #   url = "github:taj-ny/kwin-effects-forceblur";
     #   inputs.nixpkgs.follows = "nixpkgs";
     # };
-
 
     # zen-browser.url = "github:youwen5/zen-browser-flake";
     # zen-browser.inputs.nixpkgs.follows = "nixpkgs";
@@ -52,6 +45,7 @@
     home-manager,
     ...
   } @ inputs: let
+    
     # Supported system (x86_64 architecture only)
     system = "x86_64-linux";
 
