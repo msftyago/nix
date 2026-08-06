@@ -16,12 +16,14 @@
       helm
       anzu
       xclip
+      cargo
       magit
       corfu
       flymd
       #racer
       direnv
       pandoc
+      elfeed
       blamer
       docker
       quelpa
@@ -40,7 +42,9 @@
       org-modern
       lsp-docker
       wat-ts-mode
+      dummyparens
       auto-org-md
+      wat-ts-mode
       lsp-treemacs
       mermaid-mode
       company-racer

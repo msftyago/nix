@@ -10,7 +10,10 @@
       # # Extra config
       # include = "~/nix/home/programs/kitty/current-theme.conf";
 
-      # Font
+      # Bell (has to be WAV or OGA on linux)
+      bell_path = "~/nix/home/programs/kitty/bonk.wav";
+
+      # Font 
       font_family = "DejaVu Sans Mono";
       font_size = "9.0";
 
@@ -39,7 +42,7 @@
       # Extra & Cosmetics
       url_style = "double";
       window_padding_width = 4;
-      enable_audio_bell = false;    
+      # enable_audio_bell = false;    
       confirm_os_window_close = 0;
     };
 

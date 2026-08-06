@@ -48,6 +48,12 @@
         updates_disabled  = true;
       };
 
+      "{3c078156-979c-498b-8990-85f7987dd929}" = {
+        install_url = moz "sidebery";
+        installation_mode = "force_installed";
+        updates_disabled = true;
+      };
+
       "{41bb7295-c2bd-4e13-885f-dc67cb983c17}" = {
         install_url = moz "2black";
         installation_mode = "force_installed";

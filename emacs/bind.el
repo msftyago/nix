@@ -9,6 +9,7 @@
   (yank)
   (open-line 1)
   (next-line 1)
-  (yank)
-)
-(global-set-key (kbd "C-6") 'duplicate-line)
+  (yank))
+(global-set-key (kbd "C-^") 'duplicate-line)
+
+

@@ -2,6 +2,7 @@
 ;; ←-------------- DEFAULT -------------------→
 ;;
 
+(load-file "/home/yago/nix/emacs/parts/feed.el")
 (load-file "/home/yago/nix/emacs/parts/xclip.el")
 (load-file "/home/yago/nix/emacs/parts/corfu.el")
 (load-file "/home/yago/nix/emacs/parts/rustic.el")

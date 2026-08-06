@@ -5,14 +5,16 @@
 
   imports = [
     ./programs/obs
+    # ./programs/zed
     ./programs/kitty
+    ./programs/vscode
   ];
   
   home.packages = with pkgs; [
     gh
     putty
     starfetch
-    zed-editor
+    zed-editor                
     codeblocks
     platformio
     
