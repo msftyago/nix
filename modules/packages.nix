@@ -2,7 +2,6 @@
   environment.systemPackages = with pkgs; [
     nh
     lf
-    git
     bat
     vim
     meow
