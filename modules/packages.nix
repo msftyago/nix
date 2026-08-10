@@ -18,6 +18,7 @@
     kitty
     oxker
     whois
+    bruno
     direnv
     cowsay
     lolcat
@@ -55,6 +56,7 @@
     bluez-experimental
     python312Packages.pip
     noto-fonts-color-emoji
+    apache-directory-studio
   ];
  
   users.users.yago = {
@@ -66,6 +68,7 @@
       "wireshark"
       "wheel"
     ];
+    # hashedPassword = "$y$j9T$uWKuCDwBimDNUi8JwVVe0/$XccZyH2dhqQPyfF6OE1fjqJ0shBeR10Rr9SqGRtjaD4";
     packages = with pkgs; [
       # Network
       dig
@@ -147,6 +150,7 @@
       kdePackages.karousel
       kdePackages.umbrello
       kdePackages.ghostwriter
+      kdePackages.ksshaskpass      
       
       # KDE: social
       kdePackages.neochat
@@ -156,7 +160,6 @@
       kdePackages.kmahjongg
       kdePackages.konqueror
       kdePackages.ksudoku
-
       kdePackages.kapman
       kdePackages.minuet
       kdePackages.kshisen
@@ -184,9 +187,7 @@
       kdePackages.kalgebra
       # kdePackages.kajongg #BROKEN
       kdePackages.kamera
-
       kdePackages.isoimagewriter
-
       kdePackages.kolourpaint
       kdePackages.kcolorpicker
       kdePackages.kcolorchooser

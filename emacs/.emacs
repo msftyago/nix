@@ -41,8 +41,24 @@
      "7e98dc1aa7f5db0557691da690c38d55e83ddd33c6d268205d66e430d57fb982"
      default))
  '(display-battery-mode t)
- ;; '(display-line-numbers t)
- ;; '(rainbow-delimiters-mode-enable t)
+ '(elfeed-feeds
+   '("https://blogs.kde.org/authors/nategraham/index.xml"
+     ("https://news.ycombinator.com/rss" hacker)
+     ("https://www.reddit.com/r/programming.rss" programming)
+     ("https://www.reddit.com/r/emacs.rss" emacs)
+     ("https://habr.com/ru/rss/all/all/?fl=ru" habr-all)
+     ("https://habr.com/ru/rss/news/?fl=ru" habr-news)
+     ("https://nuancesprog.ru/feed" nop)
+     ("https://dev.to/feed" dev-to) ("https://ldap.com/feed/" ldap)
+     ("https://meow.uz/rss.xml/" meow-uz)
+     ("https://www.reddit.com/r/nasa.rss" nasa)
+     ("https://habr.com/ru/rss/hub/astronomy/all/?fl=ru"
+      habr-astronomy)
+     ("https://habr.com/ru/rss/flows/popsci/all/?fl=ru" habr-popsci)
+     ("https://www.reddit.com/r/golang.rss" golang)
+     ("https://www.reddit.com/r/rust.rss" rust)
+     ("https://www.reddit.com/r/devops.rss" devops)
+     ("https://www.reddit.com/r/kubernetes.rss" kubernetes)))
  '(fancy-splash-image nil)
  '(menu-bar-mode nil)
  '(mode-line-format
@@ -57,18 +73,7 @@
      "  " mode-line-modes mode-line-misc-info))
  '(mode-line-right-align-edge 'right-fringe)
  '(newsticker-url-list '(("meow" "https://meow.uz/rss.xml" nil 86400 nil)))
- '(package-selected-packages
-   '(aggressive-indent all-the-icons anzu auto-org-md blamer
-		       company-racer corfu direnv ef-themes
-		       elisp-autofmt elisp-def elisp-format elisp-refs
-		       elpaca flycheck flymd grip-mode helm kkp
-		       lsp-treemacs magit math-symbol-lists meow
-		       mermaid-mode multiple-cursors neotree nix-mode
-		       org-journal org-modern org-superstar pacmacs
-		       pandoc pdf-tools pgmacs quelpa
-		       rainbow-delimiters rustic scopeline transwin
-		       treemacs-nerd-icons treemacs-tab-bar wat-mode
-		       wat-ts-mode ztree))
+ '(package-selected-packages nil)
  '(package-vc-selected-packages
    '((pgmacs :vc-backend Git :url "https://github.com/emarsden/pgmacs")
      (pg :vc-backend Git :url "https://github.com/emarsden/pg-el")))

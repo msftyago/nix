@@ -41,6 +41,7 @@
       docker-cli
       org-modern
       lsp-docker
+      dotenv-mode
       wat-ts-mode
       dummyparens
       auto-org-md

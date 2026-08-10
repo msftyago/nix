@@ -87,7 +87,7 @@
           "# undo-tree"
           "*.~undo-tree~"
              ];
-      init.defaultBranch = "main";
+      init.defaultBranch = "master";
     };
   };
 }

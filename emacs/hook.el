@@ -12,4 +12,3 @@
 
 (add-hook 'org-mode-hook 'company-mode)
 (add-hook 'org-mode-hook 'org-modern-mode)
-

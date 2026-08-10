@@ -11,14 +11,14 @@
       # include = "~/nix/home/programs/kitty/current-theme.conf";
 
       # Bell (has to be WAV or OGA on linux)
-      bell_path = "~/nix/home/programs/kitty/bonk.wav";
+      bell_path = "~/nix/home/programs/kitty/audio/are-u-sure.mp3";
 
       # Font 
       font_family = "DejaVu Sans Mono";
       font_size = "9.0";
 
       # Cursor & Mouse
-      cursor_tail = 1;
+      cursor_trail = 1;
       cursor_shape = "beam";
       mouse_hide_wait = "-1.0";
       cursor_beam_thickness = "1.666";
@@ -26,12 +26,12 @@
       cursor_stop_blinking_after = "0.1";
 
       # Tab
-      tab_bar_min_tabs = 1;
-      tab_separator=  "  ࿖ ";
-      tab_bar_align = "right";
-      tab_title_max_length = 20;
-      tab_title_template =
-        "{f'{title[:30]}…' if title.rindex(title[-1]) + 1 > 30 else (title.center(6) if (title.rindex(title[-1]) + 1) % 2 == 0 else title.center(5))}";
+      # tab_bar_min_tabs = 2;
+      # tab_separator=  "  ࿖ ";
+      # tab_bar_align = "right";
+      # tab_title_max_length = 20;
+      # tab_title_template =
+      #   "{f'{title[:30]}…' if title.rindex(title[-1]) + 1 > 30 else (title.center(6) if (title.rindex(title[-1]) + 1) % 2 == 0 else title.center(5))}";
 
 
       # Background

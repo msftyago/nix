@@ -8,26 +8,28 @@
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "ahci" ];
+  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usb_storage" "usbhid" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
-  boot.kernelModules = [ "kvm-amd" ];
+  boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/e567623f-9326-4e74-bfeb-184d25fadfa9";
+    { device = "/dev/mapper/luks-3de86fb8-1d51-4d40-827b-6bcae0c0939b";
       fsType = "ext4";
     };
 
+  boot.initrd.luks.devices."luks-3de86fb8-1d51-4d40-827b-6bcae0c0939b".device = "/dev/disk/by-uuid/3de86fb8-1d51-4d40-827b-6bcae0c0939b";
+
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/3E12-70C2";
+    { device = "/dev/disk/by-uuid/0008-4F93";
       fsType = "vfat";
       options = [ "fmask=0077" "dmask=0077" ];
     };
 
   swapDevices =
-    [ { device = "/dev/disk/by-uuid/3e15232b-7c09-42e9-ba3c-216eb62f0e93"; }
+    [ { device = "/dev/mapper/luks-2c20d866-584a-4f7e-8ba8-b5422eb4deca"; }
     ];
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-  hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+  hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }
