@@ -1,4 +1,3 @@
-;; Treemacs
 (require 'treemacs)
 (use-package treemacs
 :custom (treemacs-position 'left)

@@ -18,7 +18,7 @@
       font_size = "9.0";
 
       # Cursor & Mouse
-      cursor_trail = 1;
+      #cursor_trail = 1;
       cursor_shape = "beam";
       mouse_hide_wait = "-1.0";
       cursor_beam_thickness = "1.666";
