@@ -40,7 +40,7 @@
      "6dcf1ca4c7432773084b9d52649ee5eb2c663131c4c06859f648dea98d9acb3e"
      "7e98dc1aa7f5db0557691da690c38d55e83ddd33c6d268205d66e430d57fb982"
      default))
- '(display-battery-mode t)
+ '(display-battery-mode nil)
  '(elfeed-feeds
    '("https://blogs.kde.org/authors/nategraham/index.xml"
      ("https://news.ycombinator.com/rss" hacker)
@@ -110,3 +110,5 @@
  '(tty-menu-selected-face ((t (:background "#1640b0" :foreground "#ffffff"))))
  '(window-divider ((t (:foreground "#080808"))))
  '(window-divider-first-pixel ((t nil))))
+(put 'scroll-left 'disabled nil)
+(put 'upcase-region 'disabled nil)

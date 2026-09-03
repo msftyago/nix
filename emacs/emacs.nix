@@ -15,6 +15,7 @@
       meow
       helm
       anzu
+      yaml
       xclip
       cargo
       magit
@@ -33,7 +34,8 @@
       treemacs
       wat-mode
       transwin
-      toml-mode      
+      toml-mode
+      yaml-mode
       fish-mode
       scopeline
       grip-mode

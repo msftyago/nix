@@ -17,26 +17,11 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
 
     zed-extensions.url = "github:DuskSystems/nix-zed-extensions";
-    
-    # GNU Emacs my beloved
-    # doom-emacs.url = "github:nix-community/nix-doom-emacs";
-
-    # Better blur
-    # kwin-effects-forceblur = {
-    #   url = "github:taj-ny/kwin-effects-forceblur";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
-
-    # zen-browser.url = "github:youwen5/zen-browser-flake";
-    # zen-browser.inputs.nixpkgs.follows = "nixpkgs";
-        
-    # Nixpkgs unstable for rolling release
+            
     nixpkgs-unstable.url = "github:nixos/nixpkgs?ref=nixos-unstable";
 
-    # For hardware specific modifications
     hardware.url = "github:nixos/nixos-hardware";
 
-    # Home Manager
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
@@ -60,13 +45,11 @@
     ]));
     
 
-    # allow_unfree packages
     pkgs = import nixpkgs {
-      inherit system; # system = system;
+      inherit system;
       config.allowUnfree = true;
     };
 
-    # Overlays
     overlays = import ./overlays/default.nix;
     pkgsWithOverlays = import pkgs {
       inherit system;
@@ -90,8 +73,6 @@
       tex
     ];
 
-
-    # Home manager
     homeConfigurations.yago = home-manager.lib.homeManagerConfiguration {
       inherit system;
       username = "yago";

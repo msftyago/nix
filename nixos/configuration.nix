@@ -35,18 +35,20 @@
   };
 
   programs.nix-ld.enable = true;
-  
+
   nixpkgs.config.permittedInsecurePackages = [
     "olm-3.2.16"
   ];
 
   services.postgresql = {
-    enable = true;
-    package = pkgs.postgresql_15;
+    enable = false;
+    package = pkgs.postgresql_18;
   };
 
   virtualisation.docker.enable = true;
-  
+
+  services.hardware.openrgb.enable = true;
+
   services.udev = {
     extraRules = ''
       # KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{serial}=="*vial:f64c2b3c*", MODE="0660", TAG+="uaccess", TAG+="udev-acl"
@@ -90,6 +92,9 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "nix";
+  networking.hosts = {
+    "91.212.89.25" = ["git.oss.uzinfocom.uz"];
+  };
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
@@ -129,7 +134,7 @@
   # users.extraGroups.vboxusers.members = ["foxtails"];
   # virtualisation.virtualbox.host.enableExtensionPack = true;
   # virtualisation.virtualbox.guest.enable = true;
-  
+
   programs.fish.enable = true;
 
   nixpkgs.config.allowUnfree = true;

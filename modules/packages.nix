@@ -45,17 +45,25 @@
     scope-tui
     alejandra
     man-pages
-    postgresql
+    # postgresql
     font-alias
     noto-fonts
+    mullvad-vpn
     nixpkgs-fmt
     rust-analyzer
+    mullvad-browser
+    mullvad-compass
     man-pages-posix
     gnome-disk-utility
     bluez-experimental
     python312Packages.pip
     noto-fonts-color-emoji
     apache-directory-studio
+
+    netbird
+    netbird-ui
+    netbird-dashboard
+    netbird-management
   ];
  
   users.users.yago = {

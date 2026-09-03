@@ -42,6 +42,7 @@
     enable = true;
 
     ignores = [
+      "/rustfmt.toml/"
       "# -*- mode: gitignore; -*-"
       "*~"
       "\#*\#"
