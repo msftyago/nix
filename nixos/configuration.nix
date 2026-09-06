@@ -14,8 +14,8 @@
     inputs.home-manager.nixosModules.home-manager
     ./hardware-configuration.nix
     ../modules/packages.nix
-    #./parts/better-blur.nix
     ./parts/firefox.nix
+    ./parts/mullvad.nix
     ./parts/audio.nix
     ./parts/game.nix
     ./parts/pkt.nix

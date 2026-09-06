@@ -11,7 +11,7 @@
       # include = "~/nix/home/programs/kitty/current-theme.conf";
 
       # Bell (has to be WAV or OGA on linux)
-      bell_path = "~/nix/home/programs/kitty/bonk.wav";
+      bell_path = "~/nix/home/programs/kitty/are-u-sure.mp3";
 
       # Font 
       font_family = "DejaVu Sans Mono";

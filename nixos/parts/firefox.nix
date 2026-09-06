@@ -48,6 +48,12 @@
         updates_disabled  = true;
       };
 
+      "{0e10f3d7-07f6-4f12-97b9-9b27e07139a5}" = {
+        install_url = moz "netcraft-toolbar";
+        installation_mode = "force_installed";
+        updates_disabled = false;
+      };
+      
       "{3c078156-979c-498b-8990-85f7987dd929}" = {
         install_url = moz "sidebery";
         installation_mode = "force_installed";

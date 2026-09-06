@@ -42,10 +42,11 @@
     settings = {
       user = {
         name = "Kamol Hakimov";
-        email = "muhammadkamol@yahoo.com";
+        email = "meow@meow.uz";
         };
 
-        ignores = [
+      ignores = [
+          "rustfmt.toml"
           "# -*- mode: gitignore; -*-"
 	        "*~"
           "\#*\#"

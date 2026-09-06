@@ -48,13 +48,21 @@
     postgresql
     font-alias
     noto-fonts
+    # mullvad-vpn    
     nixpkgs-fmt
     rust-analyzer
     man-pages-posix
+    mullvad-browser
+    mullvad-compass    
     gnome-disk-utility
     bluez-experimental
     python312Packages.pip
     noto-fonts-color-emoji
+
+    netbird
+    netbird-ui
+    netbird-dashboard
+    netbird-management
   ];
  
   users.users.yago = {
@@ -80,8 +88,7 @@
       suricata
       bandwhich
       inetutils
-      
-      # Absolute kasha
+
       vlc
       #nyxt
       anki
@@ -126,70 +133,60 @@
       libreoffice-qt6-still
       dockerfile-language-server
 
-
-      # KDE: science
-      kdePackages.step
-      kdePackages.marble
-
-      # KDE: utils
-      kdePackages.kget
-      kdePackages.kate
-      kdePackages.krdc
-      kdePackages.krfb
-      kdePackages.kfind      
-      kdePackages.kclock
-      kdePackages.ktouch
-      kdePackages.kalarm
-      kdePackages.kbackup
-      kdePackages.yakuake
-      kdePackages.kteatime
-      kdePackages.kdenlive
-      kdePackages.karousel
-      kdePackages.umbrello
-      kdePackages.ghostwriter
       
-      # KDE: social
-      kdePackages.neochat
-      kdePackages.akregator
-      
-      # KDE: entertainment
-      kdePackages.kmahjongg
-      kdePackages.konqueror
-      kdePackages.ksudoku
-
-      kdePackages.kapman
-      kdePackages.minuet
-      kdePackages.kshisen
-      kdePackages.palapeli
-      kdePackages.knavalbattle
-      kdePackages.kigo # my fav board game
-      kdePackages.kreversi
-      kdePackages.knetwalk
-      kdePackages.konquest
-      kdePackages.bovo
-      kdePackages.kmplot
-      kdePackages.katomic
-      kdePackages.francis
-      kdePackages.ksirk
-      kdePackages.kasts
-      kdePackages.kamoso
+      kdePackages.akregator      
       kdePackages.alligator
+      kdePackages.bovo
+      kdePackages.falkon
       kdePackages.filelight
+      kdePackages.francis
+      kdePackages.ghostwriter
+      kdePackages.isoimagewriter
+      kdePackages.kalarm
+      kdePackages.kalgebra
+      kdePackages.kamera
+      kdePackages.kamoso
+      kdePackages.kapman
+      kdePackages.karousel
+      kdePackages.kasts
+      kdePackages.kate
+      kdePackages.katomic
+      kdePackages.kbackup
+      kdePackages.kcachegrind      
+      kdePackages.kclock
+      kdePackages.kcolorchooser
+      kdePackages.kcolorpicker
+      kdePackages.kdenlive
+      kdePackages.kfind      
+      kdePackages.kget
+      kdePackages.kigo
+      kdePackages.kmahjongg
+      kdePackages.kmplot
+      kdePackages.knavalbattle
+      kdePackages.knetwalk
+      kdePackages.kolourpaint
+      kdePackages.konqueror
+      kdePackages.konquest
+      kdePackages.konversation
+      kdePackages.krdc
+      kdePackages.kreversi
+      kdePackages.krfb      
+      kdePackages.kruler
+      kdePackages.kshisen
+      kdePackages.ksirk
+      kdePackages.ksudoku
       kdePackages.ksystemlog
       kdePackages.ksystemstats
+      kdePackages.kteatime
       kdePackages.ktorrent
-      kdePackages.kruler
-      kdePackages.konversation
-      kdePackages.falkon
-      kdePackages.kalgebra
-      # kdePackages.kajongg #BROKEN
-      kdePackages.kamera
-
-      kdePackages.isoimagewriter
-
-      kdePackages.kolourpaint
-      kdePackages.kcolorpicker
-      kdePackages.kcolorchooser
+      kdePackages.ktouch
+      kdePackages.marble
+      kdePackages.minuet
+      kdePackages.neochat      
+      kdePackages.palapeli
+      kdePackages.step
+      kdePackages.umbrello
+      kdePackages.yakuake
     ];
   };
 }
