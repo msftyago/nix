@@ -66,6 +66,12 @@
         updates_disabled = true;
       };
 
+      "{e0cbd13f-9dcf-435d-a722-f63f1db749bf}" = {
+        install_url = moz "wizmage";
+        installation_mode = "force_installed";
+        updates_disabled = true;
+      };
+
       "addon@darkreader.org" = {
         install_url = moz "darkreader";
         installation_mode = "force_installed";
