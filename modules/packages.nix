@@ -1,4 +1,4 @@
-{pkgs, ...}: {  
+{ pkgs, ... }: {
   environment.systemPackages = with pkgs; [
     nh
     lf
@@ -65,7 +65,7 @@
     netbird-dashboard
     netbird-management
   ];
- 
+
   users.users.yago = {
     isNormalUser = true;
     shell = pkgs.fish;
@@ -90,7 +90,7 @@
       suricata
       bandwhich
       inetutils
-      
+
       # Absolute kasha
       vlc
       #nyxt
@@ -108,6 +108,7 @@
       keymapp
       discord
       spotify
+      kontroll
       #blender
       obsidian
       #gccgo14
@@ -136,7 +137,6 @@
       libreoffice-qt6-still
       dockerfile-language-server
 
-
       # KDE: science
       kdePackages.step
       kdePackages.marble
@@ -146,7 +146,7 @@
       kdePackages.kate
       kdePackages.krdc
       kdePackages.krfb
-      kdePackages.kfind      
+      kdePackages.kfind
       kdePackages.kclock
       kdePackages.ktouch
       kdePackages.kalarm
@@ -157,12 +157,12 @@
       kdePackages.karousel
       kdePackages.umbrello
       kdePackages.ghostwriter
-      kdePackages.ksshaskpass      
-      
+      kdePackages.ksshaskpass
+
       # KDE: social
       kdePackages.neochat
       kdePackages.akregator
-      
+
       # KDE: entertainment
       kdePackages.kmahjongg
       kdePackages.konqueror

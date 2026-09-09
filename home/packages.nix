@@ -1,23 +1,23 @@
 {
   pkgs,
   ...
-}: {
+}:
+{
 
   imports = [
     ./programs/obs
-    # ./programs/zed
+    ./programs/zed
     ./programs/kitty
     ./programs/vscode
   ];
-  
+
   home.packages = with pkgs; [
     gh
     putty
     starfetch
-    zed-editor                
     codeblocks
     platformio
-    
+
     # # overrides. You can do that directly here, just don't forget the
     # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
     # # fonts?

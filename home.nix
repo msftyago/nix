@@ -27,7 +27,7 @@
     # ./home/programs/kanata
   ];
 
-  home.file = {};
+  home.file = { };
 
   home.sessionVariables = {
     EDITOR = "emacs";

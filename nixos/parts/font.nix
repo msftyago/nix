@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{ pkgs, ... }: {
   fonts = {
     fontDir.enable = true;
     enableDefaulPackages = true;
@@ -38,10 +38,10 @@
 
     fontconfig = {
       defaultFonts = {
-        monospace = ["Liberation Sans"];
-        sansSerif = ["Liberation Sans"];
-        serif = ["Liberation Sans"];
-        emoji = ["Liberation Sans"];
+        monospace = [ "Liberation Sans" ];
+        sansSerif = [ "Liberation Sans" ];
+        serif = [ "Liberation Sans" ];
+        emoji = [ "Liberation Sans" ];
       };
     };
   };

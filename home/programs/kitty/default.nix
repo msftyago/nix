@@ -1,4 +1,4 @@
-{lib, ...}:{
+{ lib, ... }: {
 
   programs.kitty = {
     enable = true;
@@ -13,7 +13,7 @@
       # Bell (has to be WAV or OGA on linux)
       bell_path = "~/nix/home/programs/kitty/audio/are-u-sure.mp3";
 
-      # Font 
+      # Font
       font_family = "DejaVu Sans Mono";
       font_size = "9.0";
 
@@ -33,7 +33,6 @@
       # tab_title_template =
       #   "{f'{title[:30]}…' if title.rindex(title[-1]) + 1 > 30 else (title.center(6) if (title.rindex(title[-1]) + 1) % 2 == 0 else title.center(5))}";
 
-
       # Background
       background_blur = 1;
       background_opacity = "0.7";
@@ -42,43 +41,43 @@
       # Extra & Cosmetics
       url_style = "double";
       window_padding_width = 4;
-      # enable_audio_bell = false;    
+      # enable_audio_bell = false;
       confirm_os_window_close = 0;
     };
 
     extraConfig = ''
-        # BlackMetal by metalelf0, https://github.com/metalelf0
-        # This schemes are available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+      # BlackMetal by metalelf0, https://github.com/metalelf0
+      # This schemes are available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
 
-        selection_foreground #000000
-        selection_background #ffffff
+      selection_foreground #000000
+      selection_background #ffffff
 
-        foreground #ffffff
-        background #000000
+      foreground #ffffff
+      background #000000
 
-        color0   #000000
-        color1   #5f8787
-        color2   #dd9999
-        color3   #a06666
-        color4   #888888
-        color5   #999999
-        color6   #aaaaaa
-        color7   #c1c1c1
-        color8   #333333
-        color9   #5f8787
-        color10  #dd9999
-        color11  #a06666
-        color12  #888888
-        color13  #999999
-        color14  #aaaaaa
-        color15  #c1c1c1
+      color0   #000000
+      color1   #5f8787
+      color2   #dd9999
+      color3   #a06666
+      color4   #888888
+      color5   #999999
+      color6   #aaaaaa
+      color7   #c1c1c1
+      color8   #333333
+      color9   #5f8787
+      color10  #dd9999
+      color11  #a06666
+      color12  #888888
+      color13  #999999
+      color14  #aaaaaa
+      color15  #c1c1c1
 
-        active_tab_foreground #ffffff
-        active_tab_background #000000
-        inactive_tab_foreground #666666
-        inactive_tab_background #000000
+      active_tab_foreground #ffffff
+      active_tab_background #000000
+      inactive_tab_foreground #666666
+      inactive_tab_background #000000
 
-        active_border_color #ffffff
+      active_border_color #ffffff
     '';
   };
 }
