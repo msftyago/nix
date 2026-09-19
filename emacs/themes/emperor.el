@@ -5,7 +5,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(battery-mode-line-format " %b%p%%")
- '(blink-cursor-blinks 1)
+ '(blink-cursor-blinks 0.1)
  '(blink-cursor-delay 0)
  '(blink-cursor-interval 0.2)
  '(blink-cursor-mode t)
@@ -68,7 +68,7 @@
  '(mode-line-highlight ((t (:background "#45605e" :foreground "#ffffff" :box (:line-width (1 . 1) :color "#ffffff")))))
  '(tty-menu-disabled-face ((t (:background "#303030" :foreground "#989898"))))
  '(tty-menu-enabled-face ((t (:inherit bold :background "#303030" :foreground "#ffffff"))))
- '(tty-menu-selected-face ((t (:background "#1640b0" :foreground "#ffffff"))))
+ '(tty-menu-selected-face ((t (:background "#FF5C5C" :foreground "#ffffff"))))
  '(window-divider ((t (:foreground "#080808"))))
  '(window-divider-first-pixel ((t nil))))
 (require 'use-package)

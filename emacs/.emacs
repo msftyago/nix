@@ -6,17 +6,86 @@
 ;;                                              |___/
 ;;
 ;; https://github.com/msftyago/nix/nixos/parts/.emacs
+
 ;;; -*- lexical-binding: t -*-
 
-(setq inhibit-startup-screen t)
-(load-file "/home/yago/nix/emacs/hi.el")
-(load-file "/home/yago/nix/emacs/themes/emperor.el") ;; Specify the theme
-(load-file "/home/yago/nix/emacs/hook.el")
-(load-file "/home/yago/nix/emacs/bind.el")
-(load-file "/home/yago/nix/emacs/parts/default.el")
+;; The default is 800 kilobytes.  Measured in bytes.
+(setq gc-cons-threshold (* 50 1000 1000))
+
+;; Profile emacs startup
+(add-hook 'emacs-startup-hook
+          (lambda ()
+            (message "*** Emacs loaded in %s with %d garbage collections."
+                     (format "%.2f seconds"
+                             (float-time
+                              (time-subtract after-init-time before-init-time)))
+                     gcs-done)))
+
+(use-package all-the-icons
+  :if (display-graphic-p))
+
+;; (setq inhibit-startup-screen t)
+;; (load-file "/home/yago/nix/emacs/themes/emperor.el") ;; Specify the theme
+
+;; ;; Custom startup
+(add-hook 'emacs-startup-hook
+	  (lambda () 
+	    (let* ((buffer-hello (get-buffer-create "GNU Emacs"))) 
+	      (switch-to-buffer buffer-hello)
+	      (insert "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
+	      (insert "    ")
+	      ;; (disable-command )
+	      (insert "\n")
+	      (center-paragraph)
+	      (toggle-truncate-lines)
+	      (delete-other-windows) 
+	      (message "There is only time. A circular pattern, a hex I abide ") 
+	      (buffer-modified-p) 
+	      (read-only-mode))))
+
+;; tty
+(add-hook 'tty-setup-hook (lambda ()
+(set-face-background 'default "unspecified-bg")
+(set-face-background 'line-number "unspecified-bg")
+(set-face-background 'line-number-current-line "unspecified-bg")
+(set-face-background 'region "unspecified-bg")))
+
+(add-hook 'prog-mode-hook 'display-line-numbers-mode)
+(add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
+(add-hook 'prog-mode-hook 'hs-minor-mode)
+(add-hook 'prog-mode-hook 'company-mode)
+
+(add-hook 'org-mode-hook 'company-mode)
+(add-hook 'org-mode-hook 'org-modern-mode)
+
+
+;; Bindings
+(use-package emacs
+:init (global-set-key (kbd "C-=") 'text-scale-increase)
+(global-set-key (kbd "C--") 'text-scale-decrease))
+
+(defun duplicate-line()
+  (interactive)
+  (move-beginning-of-line 1)
+  (kill-line)
+  (yank)
+  (open-line 1)
+  (next-line 1)
+  (yank))
+(global-set-key (kbd "C-^") 'duplicate-line)
+
+(use-package wakatime-mode
+  :ensure t
+  :config
+  (global-wakatime-mode 1))
 
 (require 'direnv)
 (global-set-key [f8] 'direnv-allow)
+
+;; Avy
+(require 'avy)
+(use-package avy
+:bind ("C-x :" . avy-goto-line))
 
 ;; Make frames transparent (use pkgs.emacs-gtk)
 ;; (set-frame-parameter (selected-frame) 'alpha-background 93)
@@ -29,7 +98,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(battery-mode-line-format " %b%p%%")
- '(blink-cursor-blinks 1)
+ '(blink-cursor-blinks 0.1)
  '(blink-cursor-delay 0)
  '(blink-cursor-interval 0.2)
  '(blink-cursor-mode t)
@@ -41,8 +110,6 @@
      "7e98dc1aa7f5db0557691da690c38d55e83ddd33c6d268205d66e430d57fb982"
      default))
  '(display-battery-mode t)
- ;; '(display-line-numbers t)
- ;; '(rainbow-delimiters-mode-enable t)
  '(fancy-splash-image nil)
  '(menu-bar-mode nil)
  '(mode-line-format
@@ -74,6 +141,19 @@
      (pg :vc-backend Git :url "https://github.com/emarsden/pg-el")))
  '(scroll-bar-mode nil)
  '(tool-bar-mode nil))
+
+(use-package wakatime-mode
+  :if (executable-find "wakatime-cli")
+  :init
+  (setq wakatime-api-key
+        (let ((key-file "~/.secrets"))
+          (when (file-exists-p key-file)
+            (string-trim (with-temp-buffer
+                           (insert-file-contents key-file)
+                           (buffer-string))))))
+  :config
+  (global-wakatime-mode))
+
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -105,3 +185,100 @@
  '(tty-menu-selected-face ((t (:background "#1640b0" :foreground "#ffffff"))))
  '(window-divider ((t (:foreground "#080808"))))
  '(window-divider-first-pixel ((t nil))))
+
+
+;; Treemacs
+(require 'treemacs)
+(use-package treemacs
+:custom (treemacs-position 'left)
+:bind ("C-c t" . treemacs))
+
+;; Scopeline
+;;(use-package scopeline 
+;;:ensure t 
+;;:delight 
+;;:hook (rust-ts-mode . scopeline-mode))
+
+(use-package elfeed
+:ensure t)
+
+;; data is stored in ~/.elfeed
+(setq elfeed-feeds
+        '(
+                ;; programming
+                ("https://news.ycombinator.com/rss" hacker)
+                ("https://www.reddit.com/r/programming.rss" programming)
+                ("https://www.reddit.com/r/emacs.rss" emacs)
+                ("https://habr.com/ru/rss/all/all/?fl=ru" habr-all)
+                ("https://habr.com/ru/rss/news/?fl=ru" habr-news)
+                ("https://nuancesprog.ru/feed" nop)
+                ("https://dev.to/feed" dev-to)
+		("https://ldap.com/feed/" ldap)
+		("https://meow.uz/rss.xml/" meow-uz)
+
+                ;; hobby
+                ("https://www.reddit.com/r/nasa.rss" nasa)
+                ("https://habr.com/ru/rss/hub/astronomy/all/?fl=ru" habr-astronomy)
+                ("https://habr.com/ru/rss/flows/popsci/all/?fl=ru" habr-popsci)
+
+                ;; programming languages
+                ;; ("https://www.reddit.com/r/javascript.rss" javascript)
+                ;; ("https://www.reddit.com/r/typescript.rss" typescript)
+                ("https://www.reddit.com/r/golang.rss" golang)
+                ("https://www.reddit.com/r/rust.rss" rust)
+
+                ;; Reddit
+                ;; ("https://www.reddit.com/r/aws.rss" aws)
+                ;; ("https://www.reddit.com/r/googlecloud.rss" googlecloud)
+                ;; ("https://www.reddit.com/r/azure.rss" azure)
+                ("https://www.reddit.com/r/devops.rss" devops)
+                ("https://www.reddit.com/r/kubernetes.rss" kubernetes)
+                ))
+
+(setq-default elfeed-search-filter "@2-days-ago +unread")
+(setq-default elfeed-search-title-max-width 100)
+(setq-default elfeed-search-title-min-width 100)
+
+;; Clipboard
+
+(global-set-key "\C-w" 'clipboard-kill-region)
+(global-set-key "\M-w" 'clipboard-kill-ring-save)
+(global-set-key "\C-y" 'clipboard-yank)
+
+;; Corfu
+;;(use-package corfu
+;;  :custom
+;;  (text-mode-ispell-word-completion nil))
+;;(advice-add 'eglot-completion-at-point :around #'cape-wrap-buster)
+;;(setq corfu-auto t
+;;      corfu-auto-delay 0.2
+;;      corfu-auto-trigger "."
+;;      corfu-quit-no-match 'separator) ;; or use t
+
+;; Rustic
+(use-package rustic 
+  :ensure t
+;; :config (setq rustic-rustfmt-args "+nightly")
+;; :config (setq rustic-rustfmt-config-alist '((hard_tabs . t) (skip_children . nil)))
+:config (setq rustic-format-on-save t) 
+:custom (rustic-cargo-use-last-stored-arguments t))
+
+;; Dabbrev
+(use-package dabbrev
+  ;; Swap M-/ and C-M-/
+  :bind (("M-/" . dabbrev-completion) 
+("C-M-/" . dabbrev-expand)) 
+:config (add-to-list 'dabbrev-ignored-buffer-regexps "\\` ") 
+(add-to-list 'dabbrev-ignored-buffer-modes 'authinfo-mode) 
+(add-to-list 'dabbrev-ignored-buffer-modes 'doc-view-mode) 
+(add-to-list 'dabbrev-ignored-buffer-modes 'pdf-view-mode) 
+(add-to-list 'dabbrev-ignored-buffer-modes 'tags-table-mode))
+
+
+(use-package emacs
+:init
+(global-set-key [f7] 'company-clang))
+
+;; Racer {via company}
+(require 'company-racer)
+(with-eval-after-load 'company (add-to-list 'company-backends 'company-racer))

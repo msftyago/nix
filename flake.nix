@@ -30,13 +30,10 @@
     # zen-browser.url = "github:youwen5/zen-browser-flake";
     # zen-browser.inputs.nixpkgs.follows = "nixpkgs";
         
-    # Nixpkgs unstable for rolling release
     nixpkgs-unstable.url = "github:nixos/nixpkgs?ref=nixos-unstable";
 
-    # For hardware specific modifications
     hardware.url = "github:nixos/nixos-hardware";
 
-    # Home Manager
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };

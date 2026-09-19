@@ -1,19 +1,20 @@
-{lib, ...}:{
-
+{lib, ...}: {
   programs.kitty = {
     enable = true;
+    shellIntegration.enableFishIntegration = true;
 
     settings = lib.mkForce {
-
+      shell = "fish";
+      
       editor = "emacs";
 
       # # Extra config
       # include = "~/nix/home/programs/kitty/current-theme.conf";
 
       # Bell (has to be WAV or OGA on linux)
-      bell_path = "~/nix/home/programs/kitty/are-u-sure.mp3";
+      bell_path = "~/nix/home/programs/kitty/bell-assets/are-u-sure.mp3";
 
-      # Font 
+      # Font
       font_family = "DejaVu Sans Mono";
       font_size = "9.0";
 
@@ -27,12 +28,10 @@
 
       # Tab
       tab_bar_min_tabs = 1;
-      tab_separator=  "  ࿖ ";
+      tab_separator = "  ࿖ ";
       tab_bar_align = "right";
       tab_title_max_length = 20;
-      tab_title_template =
-        "{f'{title[:30]}…' if title.rindex(title[-1]) + 1 > 30 else (title.center(6) if (title.rindex(title[-1]) + 1) % 2 == 0 else title.center(5))}";
-
+      tab_title_template = "{f'{title[:30]}…' if title.rindex(title[-1]) + 1 > 30 else (title.center(6) if (title.rindex(title[-1]) + 1) % 2 == 0 else title.center(5))}";
 
       # Background
       background_blur = 1;
@@ -42,43 +41,63 @@
       # Extra & Cosmetics
       url_style = "double";
       window_padding_width = 4;
-      # enable_audio_bell = false;    
+      # enable_audio_bell = false;
       confirm_os_window_close = 0;
     };
 
     extraConfig = ''
-        # BlackMetal by metalelf0, https://github.com/metalelf0
-        # This schemes are available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+      # The basic colors
+      foreground                      #ffffff
+      background                      #000000
+      selection_foreground            #000000
+      selection_background            #8B0101
 
-        selection_foreground #000000
-        selection_background #ffffff
+      # Cursor colors
+      cursor                          #bbc2cf
+      cursor_text_color               #cb0101
 
-        foreground #ffffff
-        background #000000
+      # kitty window border colors
+      active_border_color     #000000
+      inactive_border_color   #000000
 
-        color0   #000000
-        color1   #5f8787
-        color2   #dd9999
-        color3   #a06666
-        color4   #888888
-        color5   #999999
-        color6   #aaaaaa
-        color7   #c1c1c1
-        color8   #333333
-        color9   #5f8787
-        color10  #dd9999
-        color11  #a06666
-        color12  #888888
-        color13  #999999
-        color14  #aaaaaa
-        color15  #c1c1c1
+      # Tab bar colors
+      active_tab_foreground   #cb0101
+      active_tab_background   #000000
+      inactive_tab_foreground #000000
+      inactive_tab_background #000000
 
-        active_tab_foreground #ffffff
-        active_tab_background #000000
-        inactive_tab_foreground #666666
-        inactive_tab_background #000000
+      # The basic 16 colors
+      # black
+      color0 #000000
+      color8 #000000
 
-        active_border_color #ffffff
+      # red
+      color1 #cb0101
+      color9 #cb0101
+
+      # green
+      color2  #1FB500
+      color10 #1FB500
+
+      # yellow
+      color3  #FFEE00
+      color11 #FFEE00
+
+      # blue
+      color4  #0180fe
+      color12 #0180fe
+
+      # magenta
+      color5  #FF00BB
+      color13 #FF00BB
+
+      # cyan
+      color6  #00D9FF
+      color14 #00D9FF
+
+      # white
+      color7  #FFFFFF
+      color15 #FFFFFF
     '';
   };
 }

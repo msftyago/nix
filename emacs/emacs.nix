@@ -30,6 +30,7 @@
       rustic
       #enlight
       neotree
+      blacken
       treemacs
       wat-mode
       transwin
@@ -51,10 +52,11 @@
       elisp-autofmt
       all-the-icons
       markdown-mode
-      #wakatime-mode
+      wakatime-mode
       #sideline-eglot
       cargo-transient
       dockerfile-mode
+      auto-virtualenv
       multiple-cursors
       #sideline-flymake
       #sideline-flycheck
@@ -66,6 +68,7 @@
       nix-mode
       nix-buffer
       nixpkgs-fmt
+      nix-ts-mode
       nix-sandbox		
       nix-modeline
       org-nix-shell
@@ -82,17 +85,11 @@
       elisp-def
       elisp-refs
       elisp-format
-      # Tree-sitter & Rust
-      #rustic
-      #rust-mode
-      #tree-sitter
-      nix-ts-mode
-      #rust-ts-mode
-      #graphql-ts-mode
-      #tree-sitter-langs
-      #markdown-ts-mode
-      #tree-sitter-indent
-      #treemacs-nerd-icons  
+
+      # Haskell
+      lsp-haskell
+      haskell-mode
+      haskell-tab-indent
     ];
   };
 }

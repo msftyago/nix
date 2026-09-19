@@ -23,11 +23,8 @@
   imports = [
     ./emacs/emacs.nix
     ./home/packages.nix
-    # # TODO: fix the user group permissions
     # ./home/programs/kanata
   ];
-
-  home.file = {};
 
   home.sessionVariables = {
     EDITOR = "emacs";
@@ -35,7 +32,6 @@
 
   programs.home-manager.enable = true;
   
-  # Git
   programs.gh.enable = true;
 
   programs.git = {
