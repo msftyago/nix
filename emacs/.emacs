@@ -9,6 +9,7 @@
 
 ;;; -*- lexical-binding: t -*-
 
+
 ;; The default is 800 kilobytes.  Measured in bytes.
 (setq gc-cons-threshold (* 50 1000 1000))
 
@@ -74,11 +75,6 @@
   (yank))
 (global-set-key (kbd "C-^") 'duplicate-line)
 
-(use-package wakatime-mode
-  :ensure t
-  :config
-  (global-wakatime-mode 1))
-
 (require 'direnv)
 (global-set-key [f8] 'direnv-allow)
 
@@ -86,6 +82,9 @@
 (require 'avy)
 (use-package avy
 :bind ("C-x :" . avy-goto-line))
+
+(require 'direnv)
+(global-set-key [f8] 'direnv-allow)
 
 ;; Make frames transparent (use pkgs.emacs-gtk)
 ;; (set-frame-parameter (selected-frame) 'alpha-background 93)
@@ -141,6 +140,11 @@
      (pg :vc-backend Git :url "https://github.com/emarsden/pg-el")))
  '(scroll-bar-mode nil)
  '(tool-bar-mode nil))
+
+;; (use-package wakatime-mode
+;;   :ensure t
+;;   :config
+;;   (global-wakatime-mode 1))
 
 (use-package wakatime-mode
   :if (executable-find "wakatime-cli")

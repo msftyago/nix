@@ -12,6 +12,8 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
+    # GNU Emacs my beloved
+    # doom-emacs.url = "github:nix-community/nix-doom-emacs";
 
     zed-extensions.url = "github:DuskSystems/nix-zed-extensions";
 

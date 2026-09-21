@@ -14,7 +14,7 @@
   home.packages = with pkgs; [
     gh
     putty
-    starfetch
+    starfetch               
     codeblocks
     platformio
 

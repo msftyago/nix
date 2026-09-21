@@ -2,6 +2,7 @@
   environment.systemPackages = with pkgs; [
     nh
     lf
+    git
     bat
     vim
     meow
@@ -159,7 +160,7 @@
       kdePackages.kate
       kdePackages.krdc
       kdePackages.krfb
-      kdePackages.kfind
+      kdePackages.kfind      
       kdePackages.kclock
       kdePackages.ktouch
       kdePackages.kalarm

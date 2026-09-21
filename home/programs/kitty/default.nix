@@ -12,6 +12,7 @@
       # include = "~/nix/home/programs/kitty/current-theme.conf";
 
       # Bell (has to be WAV or OGA on linux)
+
       bell_path = "~/nix/home/programs/kitty/bell-assets/are-u-sure.mp3";
 
       # Font
@@ -35,12 +36,13 @@
 
       # Background
       background_blur = 1;
-      background_opacity = "0.7";
+      # background_opacity = "0.7";
       dynamic_background_opacity = true;
 
       # Extra & Cosmetics
       url_style = "double";
       window_padding_width = 4;
+
       # enable_audio_bell = false;
       confirm_os_window_close = 0;
     };
