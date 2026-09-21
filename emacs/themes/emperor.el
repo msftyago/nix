@@ -68,7 +68,7 @@
  '(mode-line-highlight ((t (:background "#45605e" :foreground "#ffffff" :box (:line-width (1 . 1) :color "#ffffff")))))
  '(tty-menu-disabled-face ((t (:background "#303030" :foreground "#989898"))))
  '(tty-menu-enabled-face ((t (:inherit bold :background "#303030" :foreground "#ffffff"))))
- '(tty-menu-selected-face ((t (:background "#1640b0" :foreground "#ffffff"))))
+ '(tty-menu-selected-face ((t (:background "#FF5C5C" :foreground "#ffffff"))))
  '(window-divider ((t (:foreground "#080808"))))
  '(window-divider-first-pixel ((t nil))))
 (require 'use-package)

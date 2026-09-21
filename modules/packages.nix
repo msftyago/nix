@@ -64,6 +64,19 @@
     netbird-ui
     netbird-dashboard
     netbird-management
+
+    fishPlugins.done
+    fishPlugins.sponge
+    fishPlugins.pisces
+    fishPlugins.puffer
+    fishPlugins.forgit
+    fzf
+    # fishPlugins.gruvbox
+    fishPlugins.wakatime-fish
+    fishPlugins.colored-man-pages
+    fishPlugins.fish-you-should-use
+    fishPlugins.grc
+    grc
   ];
 
   users.users.yago = {
