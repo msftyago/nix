@@ -51,6 +51,7 @@
     noto-fonts
     mullvad-vpn
     nixpkgs-fmt
+    wakatime-cli
     rust-analyzer
     mullvad-browser
     mullvad-compass

@@ -16,6 +16,7 @@
       helm
       anzu
       yaml
+      emms
       xclip
       cargo
       magit
