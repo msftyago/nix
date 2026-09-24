@@ -58,8 +58,12 @@
 (add-hook 'org-mode-hook 'company-mode)
 (add-hook 'org-mode-hook 'org-modern-mode)
 
+(add-hook 'dired-mode-hook 'all-the-icons-dired-mode)
 
-;; Bindings
+(use-package nerd-icons-completion
+  :config
+  (nerd-icons-completion-mode))
+
 (use-package emacs
 :init (global-set-key (kbd "C-=") 'text-scale-increase)
 (global-set-key (kbd "C--") 'text-scale-decrease))
@@ -159,7 +163,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :extend nil :stipple nil :background "#000000" :foreground "#ffffff" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight regular :height 105 :width normal :foundry "JB" :family "Fira Code"))))
+ '(default ((t (:inherit nil :extend nil :stipple nil :background "#000000" :foreground "#ffffff" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight regular :height 88 :width normal :foundry nil :family "liberation"))))
  '(aw-mode-line-face ((t (:inherit modus-themes-bold :underline nil))))
  '(button ((t (:foreground "yellow" :underline "yellow"))))
  '(compilation-line-number ((t nil)))
@@ -183,6 +187,7 @@
  '(tty-menu-disabled-face ((t (:background "#303030" :foreground "#989898"))))
  '(tty-menu-enabled-face ((t (:inherit bold :background "#303030" :foreground "#ffffff"))))
  '(tty-menu-selected-face ((t (:background "#1640b0" :foreground "#ffffff"))))
+ '(vtable ((t (:background "black" :distant-foreground "black" :foreground "snow" :weight normal :height 2.0 :width normal :family "monospace"))))
  '(window-divider ((t (:foreground "#080808"))))
  '(window-divider-first-pixel ((t nil))))
 

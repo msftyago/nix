@@ -1,4 +1,4 @@
-{pkgs, ...}: {  
+{ pkgs, ... }: {
   environment.systemPackages = with pkgs; [
     nh
     lf
@@ -25,6 +25,7 @@
     bottom
     ntfs3g
     csvlens
+    symbola
     busybox
     openocd
     rustfmt
@@ -34,12 +35,13 @@
     wezterm
     ripgrep
     onefetch
+    hasklig
     lemonade
     wash-cli
     binsider
     keycloak
     pgadmin4
-    notonoto
+    # notonoto
     firejail
     pciutils
     usbutils
@@ -48,19 +50,28 @@
     alejandra
     man-pages
     postgresql
+    #nerd-fonts
     font-alias
-    noto-fonts
-    # mullvad-vpn    
+    # noto-fonts
     nixpkgs-fmt
+    inconsolata
+    #mullvad-vpn    
     wakatime-cli
     rust-analyzer
+    # nerd-fonts.noto
+    source-code-pro
     man-pages-posix
     mullvad-browser
-    mullvad-compass    
+    mullvad-compass
     gnome-disk-utility
     bluez-experimental
+    nerd-fonts.zed-mono
+    nerd-fonts._0xproto
+    nerd-fonts.anonymice
+    nerd-fonts.monaspace
+    nerd-fonts.liberation
+    nerd-fonts.heavy-data
     python312Packages.pip
-    noto-fonts-color-emoji
 
     netbird
     netbird-ui
@@ -73,14 +84,14 @@
     fishPlugins.puffer
     fishPlugins.forgit
     fzf
-    # fishPlugins.gruvbox
+    #fishPlugins.gruvbox
     fishPlugins.wakatime-fish
     fishPlugins.colored-man-pages
     fishPlugins.fish-you-should-use
     fishPlugins.grc
     grc
   ];
- 
+
   users.users.yago = {
     isNormalUser = true;
     shell = pkgs.fish;
@@ -131,6 +142,7 @@
       librewolf
       wireshark
       dockerfmt
+      #nerdfonts
       proton-vpn
       obs-studio
       element-web
@@ -139,7 +151,6 @@
       yandex-music
       docker-compose
       element-desktop
-      #pkgs.nerdfonts
       telegram-desktop
       jetbrains-toolbox
       #libsForQt5.kamoso
@@ -149,8 +160,8 @@
       libreoffice-qt6-still
       dockerfile-language-server
 
-      
-      kdePackages.akregator      
+
+      kdePackages.akregator
       kdePackages.alligator
       kdePackages.bovo
       kdePackages.falkon
@@ -168,12 +179,12 @@
       kdePackages.kate
       kdePackages.katomic
       kdePackages.kbackup
-      kdePackages.kcachegrind      
+      kdePackages.kcachegrind
       kdePackages.kclock
       kdePackages.kcolorchooser
       kdePackages.kcolorpicker
       kdePackages.kdenlive
-      kdePackages.kfind      
+      kdePackages.kfind
       kdePackages.kget
       kdePackages.kigo
       kdePackages.kmahjongg
@@ -186,7 +197,7 @@
       kdePackages.konversation
       kdePackages.krdc
       kdePackages.kreversi
-      kdePackages.krfb      
+      kdePackages.krfb
       kdePackages.kruler
       kdePackages.kshisen
       kdePackages.ksirk
@@ -198,11 +209,26 @@
       kdePackages.ktouch
       kdePackages.marble
       kdePackages.minuet
-      kdePackages.neochat      
+      kdePackages.neochat
       kdePackages.palapeli
       kdePackages.step
       kdePackages.umbrello
       kdePackages.yakuake
     ];
   };
+
+  fonts.packages = with pkgs; [
+    noto-fonts
+    noto-fonts-cjk-sans
+    noto-fonts-color-emoji
+    notonoto
+    nerdctl
+    iosevka
+    liberation_ttf
+    fira-code
+    fira-code-symbols
+    mplus-outline-fonts.githubRelease
+    dina-font
+    proggyfonts
+  ];
 }
