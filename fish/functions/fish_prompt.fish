@@ -4,7 +4,11 @@ function fish_prompt
     end
 
 
-if [ $USER = "yago" ]  
+if [ $USER = "yago" ]
+    # set_color yellow
+    # printf '♟️ '
+    # printf '🎃 '
+
     set_color red
     printf 'yago'
     set_color --reset

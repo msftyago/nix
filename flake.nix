@@ -17,7 +17,7 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
 
     zed-extensions.url = "github:DuskSystems/nix-zed-extensions";
-    
+
     # GNU Emacs my beloved
     # doom-emacs.url = "github:nix-community/nix-doom-emacs";
 
@@ -29,14 +29,20 @@
 
     # zen-browser.url = "github:youwen5/zen-browser-flake";
     # zen-browser.inputs.nixpkgs.follows = "nixpkgs";
-        
+
     nixpkgs-unstable.url = "github:nixos/nixpkgs?ref=nixos-unstable";
 
     hardware.url = "github:nixos/nixos-hardware";
 
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-  };
+
+    modules = {
+      # url = "git+https://git.oss.uzinfocom.uz/xinux/modules?ref=main&shallow=1";
+      url = "path:/home/yago/dev/uzinfocom/modules";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+};
 
   outputs = {
     self,
@@ -44,7 +50,7 @@
     home-manager,
     ...
   } @ inputs: let
-    
+
     # Supported system (x86_64 architecture only)
     system = "x86_64-linux";
 
@@ -55,7 +61,6 @@
         #(setq org-latex-compiler "lualatex")
         #(setq org-preview-latex-default-process 'dvisvgm)
     ]));
-    
 
     # allow_unfree packages
     pkgs = import nixpkgs {
@@ -70,6 +75,7 @@
       overlays = [overlays];
       config.allowUnfree = true;
     };
+    
   in {
     nixosConfigurations.yago = nixpkgs.lib.nixosSystem {
       inherit system;
@@ -82,11 +88,9 @@
         inherit self inputs pkgsWithOverlays;
       };
     };
-
     home.packages = with pkgs; [
       tex
     ];
-
 
     # Home manager
     homeConfigurations.yago = home-manager.lib.homeManagerConfiguration {
@@ -94,7 +98,6 @@
       username = "yago";
       homeDirectory = "/home/yago";
       configuration = ./home.nix;
-
       pkgs = pkgsWithOverlays;
     };
   };

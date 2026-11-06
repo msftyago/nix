@@ -130,8 +130,6 @@
   # virtualisation.virtualbox.host.enableExtensionPack = true;
   # virtualisation.virtualbox.guest.enable = true;
   
-  programs.fish.enable = true;
-
   nixpkgs.config.allowUnfree = true;
 
   # programs.mtr.enable = true;

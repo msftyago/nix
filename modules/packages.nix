@@ -3,6 +3,7 @@
     nh
     lf
     git
+    ghc
     bat
     vim
     meow
@@ -19,7 +20,9 @@
     kitty
     oxker
     whois
+    ffmpeg
     direnv
+    yt-dlp
     cowsay
     lolcat
     bottom
@@ -30,18 +33,17 @@
     openocd
     rustfmt
     pkgconf
-    hyfetch
     lazygit
     wezterm
     ripgrep
-    onefetch
     hasklig
+    onefetch
     lemonade
+    powertop
     wash-cli
     binsider
     keycloak
     pgadmin4
-    # notonoto
     firejail
     pciutils
     usbutils
@@ -50,15 +52,12 @@
     alejandra
     man-pages
     postgresql
-    #nerd-fonts
     font-alias
-    # noto-fonts
     nixpkgs-fmt
+    ffmpeg-full
     inconsolata
-    #mullvad-vpn    
     wakatime-cli
     rust-analyzer
-    # nerd-fonts.noto
     source-code-pro
     man-pages-posix
     mullvad-browser
@@ -77,24 +76,10 @@
     netbird-ui
     netbird-dashboard
     netbird-management
-
-    fishPlugins.done
-    fishPlugins.sponge
-    fishPlugins.pisces
-    fishPlugins.puffer
-    fishPlugins.forgit
-    fzf
-    #fishPlugins.gruvbox
-    fishPlugins.wakatime-fish
-    fishPlugins.colored-man-pages
-    fishPlugins.fish-you-should-use
-    fishPlugins.grc
-    grc
   ];
 
   users.users.yago = {
     isNormalUser = true;
-    shell = pkgs.fish;
     description = "Kamol Khakimov";
     extraGroups = [
       "networkmanager"
@@ -159,7 +144,6 @@
       docker-color-output
       libreoffice-qt6-still
       dockerfile-language-server
-
 
       kdePackages.akregator
       kdePackages.alligator

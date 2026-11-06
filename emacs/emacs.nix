@@ -1,3 +1,4 @@
+
 {
   programs.emacs = {
     enable = true;
@@ -24,6 +25,7 @@
       ipcalc
       quelpa
       rustic
+      ejc-sql
       #agenix
       neotree
       blacken
@@ -36,6 +38,7 @@
       undohist
       wat-mode
       transwin
+      bluetooth
       toml-mode
       fish-mode
       scopeline
@@ -57,8 +60,10 @@
       esmond-theme
       lsp-treemacs
       mermaid-mode
+      ffmpeg-utils
+      ffmpeg-player
       company-racer
-      elisp-autofmt
+      # elisp-autofmt
       all-the-icons
       markdown-mode
       wakatime-mode
@@ -76,6 +81,7 @@
       docker-compose-mode
       all-the-icons-dired
       mermaid-docker-mode
+      melpaPackages.telega
       nerd-icons-completion
 
       # Nix

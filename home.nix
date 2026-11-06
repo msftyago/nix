@@ -21,8 +21,9 @@
   nixpkgs.config.allowUnfree = true;
 
   imports = [
+    ./fish
     ./emacs/emacs.nix
-    ./home/packages.nix
+    ./home/packages.nix    
     # ./home/programs/kanata
   ];
 
